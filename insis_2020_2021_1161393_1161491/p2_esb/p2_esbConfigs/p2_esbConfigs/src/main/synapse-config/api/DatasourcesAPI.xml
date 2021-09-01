@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/data" name="DatasourcesAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/approaches">
+        <inSequence>
+            <log description="request log">
+                <property name="msg" value="Retrieving all approaches"/>
+            </log>
+            <clone id="getApproaches">
+                <target>
+                    <sequence>
+                        <sequence key="ApproachesBeeceptor"/>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <sequence key="ApproachesMockAPI"/>
+                    </sequence>
+                </target>
+            </clone>
+        </inSequence>
+        <outSequence>
+            <log level="full"/>
+            <script language="js"><![CDATA[var log=mc.getServiceLog();
+var jsonPayload=mc.getPayloadJSON();
+var response = new Array();
+for each (var item in jsonPayload) {
+	if(typeof item === 'string'){
+     var dt = new Date().getTime();
+     var uuid = 'xxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random()*10)%10 | 0;
+        dt = Math.floor(dt/16);
+        return (c=='x' ? r.toString() :(r&0x3|0x8)).toString(16);
+    });
+    var obj = {id:uuid, name:item};
+    response.push(obj);
+    }else{
+    	response.push(item);
+    }
+}
+mc.setPayloadJSON(response);]]></script>
+            <property name="enclosing_element" scope="default">
+                <jsonArray xmlns=""/>
+            </property>
+            <aggregate id="getApproaches">
+                <completeCondition>
+                    <messageCount max="2" min="2"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" enclosingElementProperty="enclosing_element" expression="$body/jsonArray/jsonElement">
+                    <log level="full"/>
+                    <send/>
+                </onComplete>
+            </aggregate>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/technologies">
+        <inSequence>
+            <log description="request log">
+                <property name="msg" value="retrieving technologies"/>
+            </log>
+            <clone id="getTechnologies">
+                <target>
+                    <sequence>
+                        <sequence key="GetTechnologiesThemeServiceSequence"/>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <sequence key="GetTechTechnologiesServiceSequence"/>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <sequence key="GetTechnologiesFromMockAPIService"/>
+                    </sequence>
+                </target>
+            </clone>
+        </inSequence>
+        <outSequence>
+            <log level="full"/>
+            <script language="js"><![CDATA[var log=mc.getServiceLog();
+var jsonPayload=mc.getPayloadJSON();
+var response = new Array();
+for each (var item in jsonPayload) {
+if(typeof item === 'string'){
+     var dt = new Date().getTime();
+     var uuid = 'xxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random()*10)%10 | 0;
+        dt = Math.floor(dt/16);
+        return (c=='x' ? r.toString() :(r&0x3|0x8)).toString(16);
+    });
+    var obj = {id:uuid, name:item};
+    response.push(obj);
+    }else{
+    	response.push(item);
+    }
+}
+mc.setPayloadJSON(response);]]></script>
+            <property name="enclosing_element" scope="default">
+                <jsonArray xmlns=""/>
+            </property>
+            <aggregate id="getTechnologies">
+                <completeCondition>
+                    <messageCount max="3" min="3"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" enclosingElementProperty="enclosing_element" expression="$body/jsonArray/jsonElement">
+                    <log level="full"/>
+                    <send/>
+                </onComplete>
+            </aggregate>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/keywords">
+        <inSequence>
+            <log>
+                <property name="msg" value="Retrieving all keywords"/>
+            </log>
+            <clone>
+                <target>
+                    <sequence>
+                        <sequence key="GetKeywordsSOAPSequence"/>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <sequence key="GetKeywordsMockApiSequence"/>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <sequence key="GetKeywordsBeeceptorSequence"/>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <sequence key="GetKeywordsThemesServiceSequence"/>
+                    </sequence>
+                </target>
+            </clone>
+        </inSequence>
+        <outSequence>
+            <log level="full"/>
+            <script language="js"><![CDATA[var log=mc.getServiceLog();
+var jsonPayload=mc.getPayloadJSON();
+var response = new Array();
+for each (var item in jsonPayload) {
+	if(typeof item === 'string'){
+     var dt = new Date().getTime();
+     var uuid = 'xxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random()*10)%10 | 0;
+        dt = Math.floor(dt/16);
+        return (c=='x' ? r.toString() :(r&0x3|0x8)).toString(16);
+    });
+    var obj = {id:uuid, name:item};
+    response.push(obj);
+    }else{
+    	response.push(item);
+    }
+}
+mc.setPayloadJSON(response);]]></script>
+            <property name="enclosing_element" scope="default">
+                <jsonArray xmlns=""/>
+            </property>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="4" min="4"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" enclosingElementProperty="enclosing_element" expression="$body/jsonArray/jsonElement">
+                    <log level="full"/>
+                    <send/>
+                </onComplete>
+            </aggregate>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>

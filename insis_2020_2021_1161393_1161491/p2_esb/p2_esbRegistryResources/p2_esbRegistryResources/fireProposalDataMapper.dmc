@@ -1,0 +1,12 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+outputroot =  {};
+outputroot.message = inputroot.message;
+outputroot.tenantId = inputroot.tenantId;
+return outputroot;
+};
+
+
+
+

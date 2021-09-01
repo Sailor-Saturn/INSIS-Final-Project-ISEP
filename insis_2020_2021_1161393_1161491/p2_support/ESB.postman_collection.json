@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "01c6c4fa-a239-4ade-bfb5-7401d431b0a5",
+		"name": "ESB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/users/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"users",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teachers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/users/teachers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"users",
+						"teachers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approaches Beeceptor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/appbee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"appbee"
+					]
+				},
+				"description": "Approaches Beeceptor"
+			},
+			"response": []
+		},
+		{
+			"name": "Approches MockAPI (Projects)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/approaches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"approaches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approaches Aggregation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/data/approaches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"data",
+						"approaches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Technologies aggregation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/data/technologies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"data",
+						"technologies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tecnologies Theme Data Service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/tt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"tt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Technologies Technology Data Service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/tecnologias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"tecnologias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Technologies MockAPI (Projects)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/technologies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"technologies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Keywords aggregation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/data/keywords",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"data",
+						"keywords"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Keywords MockAPI (Projects)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/palavras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"palavras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Keywords Beeceptor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/keybee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"keybee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Keywords Soap ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/keywordSoap",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"keywordSoap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Keywords Themes Data Service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/apidatasource/keywordsThemes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"apidatasource",
+						"keywordsThemes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debug Approaches aggregation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8290/data/approaches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"data",
+						"approaches"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

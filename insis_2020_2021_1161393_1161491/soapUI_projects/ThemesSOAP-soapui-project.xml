@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e7a13713-4788-4712-bdc0-8db7ff5f2d86" activeEnvironment="Default" name="ThemesSOAP" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0fab862a-22a4-482f-8631-3c3fac841ea3" wsaVersion="NONE" name="ThemesSOAP11Binding" type="wsdl" bindingName="{http://ws.wso2.org/dataservice}ThemesSOAP11Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/insisSoft/ThemesSOAP.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/insisSoft/ThemesSOAP.xml"><con:part><con:url>file:/C:/insisSoft/ThemesSOAP.xml</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ws.wso2.org/dataservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://ws.wso2.org/dataservice" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation/>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+      <xs:element name="DataServiceFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="current_params" type="xs:string"/>
+            <xs:element name="current_request_name" type="xs:string"/>
+            <xs:element name="nested_exception" type="xs:string"/>
+            <xs:element name="source_data_service">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="location" type="xs:string"/>
+                  <xs:element name="default_namespace" type="xs:string"/>
+                  <xs:element name="description" type="xs:string"/>
+                  <xs:element name="data_service_name" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ds_code" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="REQUEST_STATUS" type="xs:string"/>
+      <xs:element name="DATA_SERVICE_RESPONSE">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetThemes">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Temas" type="ns0:Temas"/>
+      <xs:complexType name="Temas">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Tema" type="ns0:Tema"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Tema">
+        <xs:sequence>
+          <xs:element name="Id" nillable="true" type="xs:string"/>
+          <xs:element name="Nome" nillable="true" type="xs:string"/>
+          <xs:element name="PalavrasChave" nillable="true" type="xs:string"/>
+          <xs:element name="Tecnologia" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetThemesRequest">
+    <wsdl:part name="parameters" element="ns0:GetThemes"/>
+  </wsdl:message>
+  <wsdl:message name="GetThemesResponse">
+    <wsdl:part name="parameters" element="ns0:Temas"/>
+  </wsdl:message>
+  <wsdl:message name="DataServiceFault">
+    <wsdl:part name="parameters" element="ns0:DataServiceFault"/>
+  </wsdl:message>
+  <wsdl:portType name="ThemesPortType">
+    <wsdl:operation name="GetThemes">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:GetThemesRequest" wsaw:Action="urn:GetThemes"/>
+      <wsdl:output message="ns0:GetThemesResponse" wsaw:Action="urn:GetThemesResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:GetThemesDataServiceFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ThemesSOAP11Binding" type="ns0:ThemesPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="GetThemes">
+      <soap:operation soapAction="urn:GetThemes" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ThemesSOAP12Binding" type="ns0:ThemesPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="GetThemes">
+      <soap12:operation soapAction="urn:GetThemes" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ThemesHttpBinding" type="ns0:ThemesPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetThemes">
+      <http:operation location="GetThemes"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Themes">
+    <wsdl:port name="SecureSOAP11Endpoint" binding="ns0:ThemesSOAP11Binding">
+      <soap:address location="https://CTW-00852:8243/services/Themes.SecureSOAP11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP11Endpoint" binding="ns0:ThemesSOAP11Binding">
+      <soap:address location="http://CTW-00852:8280/services/Themes.SOAP11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:ThemesSOAP12Binding">
+      <soap12:address location="https://CTW-00852:8243/services/Themes.SecureSOAP12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP12Endpoint" binding="ns0:ThemesSOAP12Binding">
+      <soap12:address location="http://CTW-00852:8280/services/Themes.SOAP12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SecureHTTPEndpoint" binding="ns0:ThemesHttpBinding">
+      <http:address location="https://CTW-00852:8243/services/Themes.SecureHTTPEndpoint"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPEndpoint" binding="ns0:ThemesHttpBinding">
+      <http:address location="http://CTW-00852:8280/services/Themes.HTTPEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://CTW-00852:8280/services/Themes.SOAP11Endpoint</con:endpoint><con:endpoint>https://CTW-00852:8243/services/Themes.SecureSOAP11Endpoint</con:endpoint></con:endpoints><con:operation id="e1375584-6e8a-4c7c-9248-e5e180d95528" isOneWay="false" action="urn:GetThemes" name="GetThemes" bindingOperationName="GetThemes" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="71f13196-e9f5-4ed3-9988-85b70f233006" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://Usagi-Chan.lan:8280/services/Themes.SOAP11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dat="http://ws.wso2.org/dataservice">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dat:GetThemes/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:GetThemes"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="fbbdbe9f-f054-4631-8bd6-cac6b4028624" wsaVersion="NONE" name="ThemesSOAP12Binding" type="wsdl" bindingName="{http://ws.wso2.org/dataservice}ThemesSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="file:/C:/insisSoft/ThemesSOAP.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\insisSoft\ThemesSOAP.xml"><con:part><con:url>file:\C:\insisSoft\ThemesSOAP.xml</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ws.wso2.org/dataservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://ws.wso2.org/dataservice" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation/>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+      <xs:element name="DataServiceFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="current_params" type="xs:string"/>
+            <xs:element name="current_request_name" type="xs:string"/>
+            <xs:element name="nested_exception" type="xs:string"/>
+            <xs:element name="source_data_service">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="location" type="xs:string"/>
+                  <xs:element name="default_namespace" type="xs:string"/>
+                  <xs:element name="description" type="xs:string"/>
+                  <xs:element name="data_service_name" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ds_code" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="REQUEST_STATUS" type="xs:string"/>
+      <xs:element name="DATA_SERVICE_RESPONSE">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetThemes">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Temas" type="ns0:Temas"/>
+      <xs:complexType name="Temas">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Tema" type="ns0:Tema"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Tema">
+        <xs:sequence>
+          <xs:element name="Id" nillable="true" type="xs:string"/>
+          <xs:element name="Nome" nillable="true" type="xs:string"/>
+          <xs:element name="PalavrasChave" nillable="true" type="xs:string"/>
+          <xs:element name="Tecnologia" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetThemesRequest">
+    <wsdl:part name="parameters" element="ns0:GetThemes"/>
+  </wsdl:message>
+  <wsdl:message name="GetThemesResponse">
+    <wsdl:part name="parameters" element="ns0:Temas"/>
+  </wsdl:message>
+  <wsdl:message name="DataServiceFault">
+    <wsdl:part name="parameters" element="ns0:DataServiceFault"/>
+  </wsdl:message>
+  <wsdl:portType name="ThemesPortType">
+    <wsdl:operation name="GetThemes">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:GetThemesRequest" wsaw:Action="urn:GetThemes"/>
+      <wsdl:output message="ns0:GetThemesResponse" wsaw:Action="urn:GetThemesResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:GetThemesDataServiceFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ThemesSOAP11Binding" type="ns0:ThemesPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="GetThemes">
+      <soap:operation soapAction="urn:GetThemes" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ThemesSOAP12Binding" type="ns0:ThemesPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="GetThemes">
+      <soap12:operation soapAction="urn:GetThemes" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ThemesHttpBinding" type="ns0:ThemesPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetThemes">
+      <http:operation location="GetThemes"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Themes">
+    <wsdl:port name="SecureSOAP11Endpoint" binding="ns0:ThemesSOAP11Binding">
+      <soap:address location="https://CTW-00852:8243/services/Themes.SecureSOAP11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP11Endpoint" binding="ns0:ThemesSOAP11Binding">
+      <soap:address location="http://CTW-00852:8280/services/Themes.SOAP11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:ThemesSOAP12Binding">
+      <soap12:address location="https://CTW-00852:8243/services/Themes.SecureSOAP12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP12Endpoint" binding="ns0:ThemesSOAP12Binding">
+      <soap12:address location="http://CTW-00852:8280/services/Themes.SOAP12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SecureHTTPEndpoint" binding="ns0:ThemesHttpBinding">
+      <http:address location="https://CTW-00852:8243/services/Themes.SecureHTTPEndpoint"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPEndpoint" binding="ns0:ThemesHttpBinding">
+      <http:address location="http://CTW-00852:8280/services/Themes.HTTPEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://CTW-00852:8280/services/Themes.SOAP12Endpoint</con:endpoint><con:endpoint>https://CTW-00852:8243/services/Themes.SecureSOAP12Endpoint</con:endpoint></con:endpoints><con:operation id="7ed07811-4a19-4647-acfa-29ab81bf364a" isOneWay="false" action="urn:GetThemes" name="GetThemes" bindingOperationName="GetThemes" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e3e6726e-92ed-412f-b86e-4b69f0b75660" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://CTW-00852:8280/services/Themes.SOAP12Endpoint</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:dat="http://ws.wso2.org/dataservice">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <dat:GetThemes/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:GetThemes"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="__p8zALNvEeun3ZDsDsQz3A" type="Esb" name="addProposalToDatabaseSequence" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="__qMqoLNvEeun3ZDsDsQz3A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="__qMqpbNvEeun3ZDsDsQz3A" type="7001">
+      <children xmi:type="notation:Node" xmi:id="__r8-ILNvEeun3ZDsDsQz3A" type="3614">
+        <children xmi:type="notation:Node" xmi:id="__r8-JbNvEeun3ZDsDsQz3A" type="3615">
+          <children xmi:type="notation:DecorationNode" xmi:id="__r9lMLNvEeun3ZDsDsQz3A" type="7035">
+            <children xmi:type="notation:Node" xmi:id="__sABcLNvEeun3ZDsDsQz3A" type="3495">
+              <children xmi:type="notation:DecorationNode" xmi:id="__sABdbNvEeun3ZDsDsQz3A" type="5168"/>
+              <children xmi:type="notation:Node" xmi:id="__sBPkLNvEeun3ZDsDsQz3A" type="3018">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sBPkbNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sBPkrNvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sBPk7NvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:LogMediatorInputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.0/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sBPlLNvEeun3ZDsDsQz3A" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="__sBPlbNvEeun3ZDsDsQz3A" type="3019">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sBPlrNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sBPl7NvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sBPmLNvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:LogMediatorOutputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.0/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sBPmbNvEeun3ZDsDsQz3A" x="64" y="-9"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__sABcbNvEeun3ZDsDsQz3A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__sABcrNvEeun3ZDsDsQz3A" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__sABc7NvEeun3ZDsDsQz3A"/>
+              <element xmi:type="esb:LogMediator" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.0"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sABdLNvEeun3ZDsDsQz3A" x="25" y="89" width="84" height="115"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__sE58LNvEeun3ZDsDsQz3A" type="3514">
+              <children xmi:type="notation:DecorationNode" xmi:id="__sE59bNvEeun3ZDsDsQz3A" type="5181"/>
+              <children xmi:type="notation:Node" xmi:id="__sGIELNvEeun3ZDsDsQz3A" type="3082">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sGIEbNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sGIErNvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sGIE7NvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:SmooksMediatorInputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.1/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sGIFLNvEeun3ZDsDsQz3A" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="__sGIFbNvEeun3ZDsDsQz3A" type="3083">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sGIFrNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sGIF7NvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sGIGLNvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:SmooksMediatorOutputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.1/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sGIGbNvEeun3ZDsDsQz3A" x="64" y="-9"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__sE58bNvEeun3ZDsDsQz3A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__sE58rNvEeun3ZDsDsQz3A" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__sE587NvEeun3ZDsDsQz3A"/>
+              <element xmi:type="esb:SmooksMediator" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.1"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sE59LNvEeun3ZDsDsQz3A" x="149" y="89" width="84" height="115"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__sIkULNvEeun3ZDsDsQz3A" type="3495">
+              <children xmi:type="notation:DecorationNode" xmi:id="__sIkVbNvEeun3ZDsDsQz3A" type="5168"/>
+              <children xmi:type="notation:Node" xmi:id="__sJLYLNvEeun3ZDsDsQz3A" type="3018">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sJLYbNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sJLYrNvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sJLY7NvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:LogMediatorInputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.2/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sJLZLNvEeun3ZDsDsQz3A" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="__sJLZbNvEeun3ZDsDsQz3A" type="3019">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sJLZrNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sJLZ7NvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sJLaLNvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:LogMediatorOutputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.2/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sJLabNvEeun3ZDsDsQz3A" x="64" y="-9"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__sIkUbNvEeun3ZDsDsQz3A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__sIkUrNvEeun3ZDsDsQz3A" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__sIkU7NvEeun3ZDsDsQz3A"/>
+              <element xmi:type="esb:LogMediator" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.2"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sIkVLNvEeun3ZDsDsQz3A" x="273" y="89" width="84" height="115"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__sMOsLNvEeun3ZDsDsQz3A" type="3519">
+              <children xmi:type="notation:DecorationNode" xmi:id="__sMOtbNvEeun3ZDsDsQz3A" type="5146"/>
+              <children xmi:type="notation:Node" xmi:id="__sOD4LNvEeun3ZDsDsQz3A" type="3109">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sOD4bNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sOD4rNvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sOD47NvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:IterateMediatorInputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sOD5LNvEeun3ZDsDsQz3A" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="__sOD5bNvEeun3ZDsDsQz3A" type="3110">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sOD5rNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sOD57NvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sOD6LNvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:IterateMediatorOutputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sOD6bNvEeun3ZDsDsQz3A" x="-11" y="-9"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="__sOD6rNvEeun3ZDsDsQz3A" type="3606">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sOD67NvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sOD7LNvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sOD7bNvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:IterateMediatorTargetOutputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@targetOutputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sOD7rNvEeun3ZDsDsQz3A" x="80" y="-9"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="__sOD77NvEeun3ZDsDsQz3A" type="3607">
+                <children xmi:type="notation:DecorationNode" xmi:id="__sOD9LNvEeun3ZDsDsQz3A" type="7033">
+                  <children xmi:type="notation:Node" xmi:id="__sS8YLNvEeun3ZDsDsQz3A" type="3495">
+                    <children xmi:type="notation:DecorationNode" xmi:id="__sS8ZbNvEeun3ZDsDsQz3A" type="5168"/>
+                    <children xmi:type="notation:Node" xmi:id="__sTjcLNvEeun3ZDsDsQz3A" type="3018">
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="__sTjcbNvEeun3ZDsDsQz3A"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="__sTjcrNvEeun3ZDsDsQz3A" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="__sTjc7NvEeun3ZDsDsQz3A"/>
+                      <element xmi:type="esb:LogMediatorInputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@mediatorFlow/@children.0/@inputConnector"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sTjdLNvEeun3ZDsDsQz3A" x="-6" y="-5"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="__sTjdbNvEeun3ZDsDsQz3A" type="3019">
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="__sTjdrNvEeun3ZDsDsQz3A"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="__sTjd7NvEeun3ZDsDsQz3A" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="__sTjeLNvEeun3ZDsDsQz3A"/>
+                      <element xmi:type="esb:LogMediatorOutputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@mediatorFlow/@children.0/@outputConnector"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sTjebNvEeun3ZDsDsQz3A" x="64" y="-9"/>
+                    </children>
+                    <styles xmi:type="notation:DescriptionStyle" xmi:id="__sS8YbNvEeun3ZDsDsQz3A"/>
+                    <styles xmi:type="notation:FontStyle" xmi:id="__sS8YrNvEeun3ZDsDsQz3A" fontName="Sans"/>
+                    <styles xmi:type="notation:LineStyle" xmi:id="__sS8Y7NvEeun3ZDsDsQz3A"/>
+                    <element xmi:type="esb:LogMediator" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@mediatorFlow/@children.0"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sS8ZLNvEeun3ZDsDsQz3A" x="25" y="10" width="84" height="115"/>
+                  </children>
+                  <styles xmi:type="notation:TitleStyle" xmi:id="__sOD9bNvEeun3ZDsDsQz3A" showTitle="true"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__sOD8LNvEeun3ZDsDsQz3A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__sOD8bNvEeun3ZDsDsQz3A" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__sOD8rNvEeun3ZDsDsQz3A"/>
+                <element xmi:type="esb:MediatorFlow" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@mediatorFlow"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sOD87NvEeun3ZDsDsQz3A"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__sMOsbNvEeun3ZDsDsQz3A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__sMOsrNvEeun3ZDsDsQz3A" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__sMOs7NvEeun3ZDsDsQz3A"/>
+              <element xmi:type="esb:IterateMediator" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__sMOtLNvEeun3ZDsDsQz3A" x="397" y="89" width="170" height="100"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="__r9lMbNvEeun3ZDsDsQz3A" showTitle="true"/>
+          </children>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="__r8-JrNvEeun3ZDsDsQz3A"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="__r8-J7NvEeun3ZDsDsQz3A" fontName="Sans"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="__r8-KLNvEeun3ZDsDsQz3A"/>
+          <element xmi:type="esb:MediatorFlow" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__r8-KbNvEeun3ZDsDsQz3A"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="__r9lMrNvEeun3ZDsDsQz3A" type="3616">
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="__r9lM7NvEeun3ZDsDsQz3A"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="__r9lNLNvEeun3ZDsDsQz3A" fontName="Sans"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="__r9lNbNvEeun3ZDsDsQz3A"/>
+          <element xmi:type="esb:SequencesInputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@inputConnector"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__r9lNrNvEeun3ZDsDsQz3A" x="-11" y="-9"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="__r9lN7NvEeun3ZDsDsQz3A" type="3617">
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="__r9lOLNvEeun3ZDsDsQz3A"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="__r9lObNvEeun3ZDsDsQz3A" fontName="Sans"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="__r9lOrNvEeun3ZDsDsQz3A"/>
+          <element xmi:type="esb:SequencesOutputConnector" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@outputConnector"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__r9lO7NvEeun3ZDsDsQz3A" x="-11" y="-9"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="__r8-IbNvEeun3ZDsDsQz3A"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="__r8-IrNvEeun3ZDsDsQz3A" fontName="Sans"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="__r8-I7NvEeun3ZDsDsQz3A"/>
+        <element xmi:type="esb:Sequences" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__r8-JLNvEeun3ZDsDsQz3A" width="195" height="125"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="__qMqobNvEeun3ZDsDsQz3A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="__qMqorNvEeun3ZDsDsQz3A" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="__qMqo7NvEeun3ZDsDsQz3A"/>
+    <element xmi:type="esb:EsbServer" href="resources/addProposalToDatabaseSequence.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__qMqpLNvEeun3ZDsDsQz3A"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="__p8zAbNvEeun3ZDsDsQz3A"/>
+  <element xmi:type="esb:EsbDiagram" href="resources/addProposalToDatabaseSequence.esb#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="__sYb8LNvEeun3ZDsDsQz3A" type="4001" source="__sOD6rNvEeun3ZDsDsQz3A" target="__sTjcLNvEeun3ZDsDsQz3A" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__sYb8bNvEeun3ZDsDsQz3A" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@targetOutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__sYb8rNvEeun3ZDsDsQz3A" points="[11, 7, -5, -4]$[10, 6, -6, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__sZqELNvEeun3ZDsDsQz3A" type="4001" source="__r9lN7NvEeun3ZDsDsQz3A" target="__sBPkLNvEeun3ZDsDsQz3A" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__sZqEbNvEeun3ZDsDsQz3A" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__sZqErNvEeun3ZDsDsQz3A" points="[6, 9, 0, -1]$[0, 5, -6, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__sa4MLNvEeun3ZDsDsQz3A" type="4001" source="__sBPlbNvEeun3ZDsDsQz3A" target="__sGIELNvEeun3ZDsDsQz3A" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__sa4MbNvEeun3ZDsDsQz3A" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__sa4MrNvEeun3ZDsDsQz3A" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__sbfQLNvEeun3ZDsDsQz3A" type="4001" source="__sGIFbNvEeun3ZDsDsQz3A" target="__sJLYLNvEeun3ZDsDsQz3A" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__sbfQbNvEeun3ZDsDsQz3A" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__sbfQrNvEeun3ZDsDsQz3A" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__sctYLNvEeun3ZDsDsQz3A" type="4001" source="__sJLZbNvEeun3ZDsDsQz3A" target="__sOD4LNvEeun3ZDsDsQz3A" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__sctYbNvEeun3ZDsDsQz3A" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__sctYrNvEeun3ZDsDsQz3A" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__sd7gLNvEeun3ZDsDsQz3A" type="4001" source="__sOD5bNvEeun3ZDsDsQz3A" target="__r9lMrNvEeun3ZDsDsQz3A" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__sd7gbNvEeun3ZDsDsQz3A" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/addProposalToDatabaseSequence.esb#//@server/@children.0/@mediatorFlow/@children.3/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__sd7grNvEeun3ZDsDsQz3A" points="[-1, -9, 0, 1]$[0, -1, 1, 9]"/>
+  </edges>
+</notation:Diagram>

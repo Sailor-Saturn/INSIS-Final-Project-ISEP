@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="ApproachesMockAPI" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log>
+        <property name="msg" value="Retrieving from MockAPI"/>
+    </log>
+    <call>
+        <endpoint key="TempReplacementMockApiEP"/>
+    </call>
+    <filter xpath="count(//abordagem) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="No approaches from MockAPI"/>
+            </call-template>
+        </then>
+        <else>
+            <log>
+                <property name="msg" value="Retrieved approaches from MockAPI successfully"/>
+            </log>
+            <foreach expression="//jsonArray/jsonElement" id="forEachMockAPI">
+                <sequence>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <approach xmlns="">$1</approach>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//abordagem"/>
+                        </args>
+                    </payloadFactory>
+                </sequence>
+            </foreach>
+            <log level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$.approach[*]"/>
+                </args>
+            </payloadFactory>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

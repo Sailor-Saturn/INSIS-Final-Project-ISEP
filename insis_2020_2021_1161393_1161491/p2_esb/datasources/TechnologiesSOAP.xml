@@ -1,0 +1,131 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://ws.wso2.org/dataservice" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.wso2.org/dataservice">
+	<wsdl:documentation/>
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+			<xs:element name="DataServiceFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="current_params" type="xs:string"/>
+						<xs:element name="current_request_name" type="xs:string"/>
+						<xs:element name="nested_exception" type="xs:string"/>
+						<xs:element name="source_data_service">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="location" type="xs:string"/>
+									<xs:element name="default_namespace" type="xs:string"/>
+									<xs:element name="description" type="xs:string"/>
+									<xs:element name="data_service_name" type="xs:string"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ds_code" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="REQUEST_STATUS" type="xs:string"/>
+			<xs:element name="DATA_SERVICE_RESPONSE">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:any minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetTechnologies">
+				<xs:complexType>
+					<xs:sequence/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Technologies" type="ns0:Technologies"/>
+			<xs:complexType name="Technologies">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="technology" type="ns0:technology"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="technology">
+				<xs:sequence>
+					<xs:element name="Id" nillable="true" type="xs:string"/>
+					<xs:element name="Name" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="GetTechnologiesRequest">
+		<wsdl:part name="parameters" element="ns0:GetTechnologies"/>
+	</wsdl:message>
+	<wsdl:message name="GetTechnologiesResponse">
+		<wsdl:part name="parameters" element="ns0:Technologies"/>
+	</wsdl:message>
+	<wsdl:message name="DataServiceFault">
+		<wsdl:part name="parameters" element="ns0:DataServiceFault"/>
+	</wsdl:message>
+	<wsdl:portType name="TechnologiesPortType">
+		<wsdl:operation name="GetTechnologies">
+			<wsdl:documentation/>
+			<wsdl:input message="ns0:GetTechnologiesRequest" wsaw:Action="urn:GetTechnologies"/>
+			<wsdl:output message="ns0:GetTechnologiesResponse" wsaw:Action="urn:GetTechnologiesResponse"/>
+			<wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:GetTechnologiesDataServiceFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="TechnologiesSOAP11Binding" type="ns0:TechnologiesPortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+		<wsdl:operation name="GetTechnologies">
+			<soap:operation soapAction="urn:GetTechnologies" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DataServiceFault">
+				<soap:fault use="literal" name="DataServiceFault"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="TechnologiesSOAP12Binding" type="ns0:TechnologiesPortType">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+		<wsdl:operation name="GetTechnologies">
+			<soap12:operation soapAction="urn:GetTechnologies" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="DataServiceFault">
+				<soap12:fault use="literal" name="DataServiceFault"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="TechnologiesHttpBinding" type="ns0:TechnologiesPortType">
+		<http:binding verb="POST"/>
+		<wsdl:operation name="GetTechnologies">
+			<http:operation location="GetTechnologies"/>
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Technologies">
+		<wsdl:port name="SecureSOAP11Endpoint" binding="ns0:TechnologiesSOAP11Binding">
+			<soap:address location="https://CTW-00852:8243/services/Technologies.SecureSOAP11Endpoint"/>
+		</wsdl:port>
+		<wsdl:port name="SOAP11Endpoint" binding="ns0:TechnologiesSOAP11Binding">
+			<soap:address location="http://CTW-00852:8280/services/Technologies.SOAP11Endpoint"/>
+		</wsdl:port>
+		<wsdl:port name="SecureSOAP12Endpoint" binding="ns0:TechnologiesSOAP12Binding">
+			<soap12:address location="https://CTW-00852:8243/services/Technologies.SecureSOAP12Endpoint"/>
+		</wsdl:port>
+		<wsdl:port name="SOAP12Endpoint" binding="ns0:TechnologiesSOAP12Binding">
+			<soap12:address location="http://CTW-00852:8280/services/Technologies.SOAP12Endpoint"/>
+		</wsdl:port>
+		<wsdl:port name="SecureHTTPEndpoint" binding="ns0:TechnologiesHttpBinding">
+			<http:address location="https://CTW-00852:8243/services/Technologies.SecureHTTPEndpoint"/>
+		</wsdl:port>
+		<wsdl:port name="HTTPEndpoint" binding="ns0:TechnologiesHttpBinding">
+			<http:address location="http://CTW-00852:8280/services/Technologies.HTTPEndpoint"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

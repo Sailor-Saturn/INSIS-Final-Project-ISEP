@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/users" name="UsersAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/students">
+        <inSequence>
+            <log description="request log">
+                <property name="msg" value="Retrieving students..."/>
+            </log>
+            <send>
+                <endpoint key="StudentsEP"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/teachers">
+        <inSequence>
+            <log description="request log">
+                <property name="msg" value="Retrieving teachers..."/>
+            </log>
+            <send>
+                <endpoint key="TeachersEP"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/proponents">
+        <inSequence>
+            <send>
+                <endpoint key="ProponentEP"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>

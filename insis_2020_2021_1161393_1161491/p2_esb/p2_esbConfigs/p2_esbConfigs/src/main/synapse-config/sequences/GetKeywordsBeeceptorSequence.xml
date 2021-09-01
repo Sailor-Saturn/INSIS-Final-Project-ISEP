@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GetKeywordsBeeceptorSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="request log">
+        <property name="msg" value="Retrieving keywords Beeceptor Sequence"/>
+    </log>
+    <call>
+        <endpoint key="MockyForBeeceptorKeywords"/>
+    </call>
+    <filter xpath="count(//keywords) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="No Keywords from Beeceptor"/>
+            </call-template>
+        </then>
+        <else>
+            <log>
+                <property name="msg" value="Retrieved keywords from Beeceptor successfully"/>
+            </log>
+            <foreach expression="//jsonArray/jsonElement/keywords/text()" id="getKeywordsBeeceptor">
+                <sequence>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <keyword xmlns="">$1</keyword>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//text()"/>
+                        </args>
+                    </payloadFactory>
+                </sequence>
+            </foreach>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$[:1].keywords[:1].keyword[*]"/>
+                </args>
+            </payloadFactory>
+            <log level="full"/>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

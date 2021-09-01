@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/apidatasource" name="DatasourceAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/approaches">
+        <inSequence>
+            <log>
+                <property name="msg" value="Getting approaches"/>
+            </log>
+            <sequence key="ApproachesMockAPI"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/technologies">
+        <inSequence>
+            <log>
+                <property name="msg" value="Retrieving Technologies"/>
+            </log>
+            <sequence key="GetTechnologiesFromMockAPIService"/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/palavras">
+        <inSequence>
+            <sequence key="GetKeywordsMockApiSequence"/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/keybee">
+        <inSequence>
+            <sequence key="GetKeywordsBeeceptorSequence"/>
+        </inSequence>
+        <outSequence>
+            <property name="enclosing_element" scope="default">
+                <value xmlns=""/>
+            </property>
+            <aggregate id="aggregateKeywords">
+                <completeCondition>
+                    <messageCount max="1" min="1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" enclosingElementProperty="enclosing_element" expression="//*[local-name() = 'keyword']">
+                    <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+                </onComplete>
+            </aggregate>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/tecnologias">
+        <inSequence>
+            <sequence key="GetTechTechnologiesServiceSequence"/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/appbee">
+        <inSequence>
+            <sequence key="ApproachesBeeceptor"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/tt">
+        <inSequence>
+            <sequence key="GetTechnologiesThemeServiceSequence"/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/keywordSoap">
+        <inSequence>
+            <sequence key="GetKeywordsSOAPSequence"/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/keywordsThemes">
+        <inSequence>
+            <sequence key="GetKeywordsThemesServiceSequence"/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/test">
+        <inSequence>
+            <property name="REST_URL_POSTFIX" scope="default" type="STRING" value=""/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <dat:GetTechnologies xmlns:dat="http://ws.wso2.org/dataservice"/>
+                </format>
+                <args/>
+            </payloadFactory>
+            <send>
+                <endpoint key="TechnologiesSoapEP"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/testTheme">
+        <inSequence>
+            <property name="REST_URL_POSTFIX" scope="default" type="STRING" value=""/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <dat:GetThemes xmlns:dat="http://ws.wso2.org/dataservice"/>
+                </format>
+                <args/>
+            </payloadFactory>
+            <send>
+                <endpoint key="SubjectsSoapEP"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

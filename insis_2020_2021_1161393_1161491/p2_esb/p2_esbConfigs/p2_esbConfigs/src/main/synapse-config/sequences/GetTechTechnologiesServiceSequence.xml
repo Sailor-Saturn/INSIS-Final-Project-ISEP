@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GetTechTechnologiesServiceSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log>
+        <property name="message" value="Inside Sequence Technologies Data Service"/>
+    </log>
+    <property name="REST_URL_POSTFIX" scope="default" type="STRING" value=""/>
+    <payloadFactory description="body" media-type="xml">
+        <format>
+            <dat:GetTechnologies xmlns:dat="http://ws.wso2.org/dataservice"/>
+        </format>
+        <args/>
+    </payloadFactory>
+    <log level="full"/>
+    <call>
+        <endpoint key="TechnologiesSoapEP"/>
+    </call>
+    <log level="full"/>
+    <filter xpath="count(//*[local-name()='Name']) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="No Technologies from Technologies Data Service"/>
+            </call-template>
+        </then>
+        <else>
+            <log>
+                <property name="msg" value="Retrieved technologies from Technologies Data Service successfully"/>
+            </log>
+            <payloadFactory media-type="xml">
+                <format>
+                    <tecnologies xmlns="http://ws.wso2.org/dataservice">$1</tecnologies>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="//*[local-name()='Name']"/>
+                </args>
+            </payloadFactory>
+            <log level="full"/>
+            <foreach expression="//jsonArray/jsonElement" id="test">
+                <sequence>
+                    <log level="full"/>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <technology xmlns="">$1</technology>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//text()"/>
+                        </args>
+                    </payloadFactory>
+                </sequence>
+            </foreach>
+            <log level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$.tecnologies.Name[*]"/>
+                </args>
+            </payloadFactory>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

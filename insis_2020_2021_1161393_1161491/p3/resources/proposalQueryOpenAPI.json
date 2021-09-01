@@ -1,0 +1,414 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "OpenAPI definition",
+		"version": "v0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8082",
+			"description": "Generated server url"
+		}
+	],
+	"paths": {
+		"/api/q/proposals": {
+			"get": {
+				"tags": [
+					"proposal-controller-impl"
+				],
+				"summary": "Get a list of all proposals. Filtering by status is possible.",
+				"operationId": "getAllProposals",
+				"parameters": [
+					{
+						"name": "proposalStatus",
+						"in": "query",
+						"description": "Retrieve only proposals of this status.",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal server error"
+					},
+					"200": {
+						"description": "Found the proposals",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ProposalResponseDTO"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Invalid status supplied"
+					}
+				}
+			}
+		},
+		"/api/q/proposals/{proposalId}": {
+			"get": {
+				"tags": [
+					"proposal-controller-impl"
+				],
+				"summary": "Get a proposal by its id",
+				"operationId": "findById",
+				"parameters": [
+					{
+						"name": "proposalId",
+						"in": "path",
+						"description": "id of proposal to be searched",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal server error"
+					},
+					"200": {
+						"description": "Found the proposal",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ProposalResponseDTO"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Invalid id supplied"
+					},
+					"404": {
+						"description": "Proposal not found"
+					}
+				}
+			}
+		},
+		"/api/q/proposals/proponent/{proponentId}": {
+			"get": {
+				"tags": [
+					"proposal-controller-impl"
+				],
+				"summary": "Get all proposals of a proponent by its id",
+				"operationId": "getAllProposalsOfProponent",
+				"parameters": [
+					{
+						"name": "proponentId",
+						"in": "path",
+						"description": "Retrieve only proposals of this proponent.",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal server error"
+					},
+					"200": {
+						"description": "Found all the proponent proposals",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ProposalResponseDTO"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Invalid id supplied"
+					}
+				}
+			}
+		},
+		"/api/q/formalizations": {
+			"get": {
+				"tags": [
+					"formalization-controller-impl"
+				],
+				"summary": "Get a list of all formalizations a proposal. Filtering by status is possible.",
+				"operationId": "getAllFormalizations",
+				"parameters": [
+					{
+						"name": "formalizationStatus",
+						"in": "query",
+						"description": "Retrieve only formalizations of this status.",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"500": {
+						"description": "Internal server error"
+					},
+					"201": {
+						"description": "Formalizations found.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Proposal"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/q/formalizations/{id}": {
+			"get": {
+				"tags": [
+					"formalization-controller-impl"
+				],
+				"summary": "Get a formalization by its id.",
+				"operationId": "findFormalizationById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id of formalization to be searched",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Found the formalization.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Proposal"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal server error"
+					},
+					"404": {
+						"description": "Invalid id supplied"
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"ProposalResponseDTO": {
+				"required": [
+					"goals",
+					"problem",
+					"proponentId",
+					"proposalId",
+					"status",
+					"title"
+				],
+				"type": "object",
+				"properties": {
+					"proposalId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Proposal id"
+					},
+					"title": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal title"
+					},
+					"problem": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal description"
+					},
+					"goals": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal goals"
+					},
+					"technologies": {
+						"type": "array",
+						"description": "List of proposal technologies",
+						"items": {
+							"type": "string",
+							"description": "List of proposal technologies"
+						}
+					},
+					"keywords": {
+						"type": "array",
+						"description": "List of proposal keywords",
+						"items": {
+							"type": "string",
+							"description": "List of proposal keywords"
+						}
+					},
+					"approaches": {
+						"type": "array",
+						"description": "List of proposal approaches",
+						"items": {
+							"type": "string",
+							"description": "List of proposal approaches"
+						}
+					},
+					"proponentId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Proponent id"
+					},
+					"comment": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "RUC comment"
+					},
+					"status": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal status"
+					}
+				}
+			},
+			"Formalization": {
+				"type": "object",
+				"properties": {
+					"formalizationId": {
+						"type": "string"
+					},
+					"studentId": {
+						"type": "string"
+					},
+					"proposalId": {
+						"type": "string"
+					},
+					"contextDescription": {
+						"type": "string"
+					},
+					"problemDescription": {
+						"type": "string"
+					},
+					"objectivesDescription": {
+						"type": "string"
+					},
+					"approachOutcome1": {
+						"type": "string"
+					},
+					"approachOutcome2": {
+						"type": "string"
+					},
+					"contextDescriptionComment": {
+						"type": "string"
+					},
+					"problemDescriptionComment": {
+						"type": "string"
+					},
+					"objectivesDescriptionComment": {
+						"type": "string"
+					},
+					"approachOutcome1Comment": {
+						"type": "string"
+					},
+					"approachOutcome2Comment": {
+						"type": "string"
+					},
+					"internship": {
+						"type": "boolean"
+					},
+					"formalizationStatus": {
+						"type": "string",
+						"enum": [
+							"FORMALIZATION_STARTED",
+							"FORMALIZATION_ACCEPTED_ADVISOR",
+							"FORMALIZATION_REJECTED_ADVISOR",
+							"FORMALIZATION_REFACTORED",
+							"REVIEWERS_REJECTED",
+							"REVIEWERS_CHOSEN",
+							"REVIEWERS_ACCEPTED",
+							"FORMALIZATION_REJECTED",
+							"FORMALIZATION_ACCEPTED",
+							"ERROR"
+						]
+					},
+					"advisorId": {
+						"type": "string"
+					},
+					"reviewersIds": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"formalizationTimestamp": {
+						"type": "string",
+						"format": "date-time"
+					}
+				}
+			},
+			"Proposal": {
+				"type": "object",
+				"properties": {
+					"proposalId": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"problem": {
+						"type": "string"
+					},
+					"goals": {
+						"type": "string"
+					},
+					"technologies": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"keywords": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"approaches": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"proponentId": {
+						"type": "string"
+					},
+					"comment": {
+						"type": "string"
+					},
+					"proposalStatus": {
+						"type": "string",
+						"enum": [
+							"ANALYSIS",
+							"REJECTED",
+							"CANCELED",
+							"ACCEPTED",
+							"ERROR"
+						]
+					},
+					"proposalTimestamp": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"formalization": {
+						"$ref": "#/components/schemas/Formalization"
+					}
+				}
+			}
+		}
+	}
+}

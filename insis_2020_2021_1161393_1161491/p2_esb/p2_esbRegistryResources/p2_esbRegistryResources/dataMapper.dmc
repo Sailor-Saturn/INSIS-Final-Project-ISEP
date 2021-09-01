@@ -1,0 +1,14 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_proposal_0a840088_b1c9_4e6e_b48f_a1b282d1bdf7 = 0;
+outputroot =  {};
+
+for(i_proposal_0a840088_b1c9_4e6e_b48f_a1b282d1bdf7 in inputroot.GeneratedKeys.proposal){
+outputroot.id = inputroot.GeneratedKeys.proposal[i_proposal_0a840088_b1c9_4e6e_b48f_a1b282d1bdf7].ID;
+
+count_i_proposal_0a840088_b1c9_4e6e_b48f_a1b282d1bdf7++;
+}
+return outputroot;
+};
+

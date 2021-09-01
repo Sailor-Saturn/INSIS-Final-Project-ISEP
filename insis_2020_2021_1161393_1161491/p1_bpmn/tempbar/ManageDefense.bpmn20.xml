@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/manageDefense">
+  <collaboration id="Collaboration">
+    <participant id="manageDefensePool" name="Manage Defense" processRef="pool_manageDefensePool"></participant>
+  </collaboration>
+  <process id="pool_manageDefensePool" name="process_pool1" isExecutable="true">
+    <laneSet id="laneSet_pool_manageDefensePool">
+      <lane id="lane1" name="Student">
+        <flowNodeRef>startevent1</flowNodeRef>
+        <flowNodeRef>usertask1</flowNodeRef>
+        <flowNodeRef>callactivity9</flowNodeRef>
+        <flowNodeRef>usertask7</flowNodeRef>
+        <flowNodeRef>callactivity13</flowNodeRef>
+        <flowNodeRef>callactivity13</flowNodeRef>
+      </lane>
+      <lane id="lane2" name="RUC">
+        <flowNodeRef>usertask2</flowNodeRef>
+        <flowNodeRef>usertask4</flowNodeRef>
+        <flowNodeRef>usertask6</flowNodeRef>
+        <flowNodeRef>endevent1</flowNodeRef>
+        <flowNodeRef>exclusivegateway2</flowNodeRef>
+        <flowNodeRef>callactivity2</flowNodeRef>
+        <flowNodeRef>callactivity10</flowNodeRef>
+        <flowNodeRef>callactivity14</flowNodeRef>
+      </lane>
+      <lane id="lane3" name="Advisor">
+        <flowNodeRef>usertask8</flowNodeRef>
+        <flowNodeRef>callactivity5</flowNodeRef>
+        <flowNodeRef>boundarytimer1</flowNodeRef>
+        <flowNodeRef>boundarytimer2</flowNodeRef>
+        <flowNodeRef>callactivity7</flowNodeRef>
+        <flowNodeRef>callactivity12</flowNodeRef>
+      </lane>
+      <lane id="lane4" name="Jury">
+        <flowNodeRef>usertask5</flowNodeRef>
+        <flowNodeRef>exclusivegateway1</flowNodeRef>
+        <flowNodeRef>callactivity3</flowNodeRef>
+        <flowNodeRef>callactivity4</flowNodeRef>
+        <flowNodeRef>callactivity6</flowNodeRef>
+        <flowNodeRef>boundarytimer3</flowNodeRef>
+        <flowNodeRef>boundarytimer4</flowNodeRef>
+        <flowNodeRef>callactivity8</flowNodeRef>
+        <flowNodeRef>callactivity11</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <userTask id="usertask1" name="Submit report" activiti:assignee="${studentUsername}">
+      <extensionElements>
+        <activiti:formProperty id="reportTitle" name="Title" type="string" required="true"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="usertask1"></sequenceFlow>
+    <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="callactivity9"></sequenceFlow>
+    <userTask id="usertask2" name="Ask for jury suggestion" activiti:assignee="admin">
+      <extensionElements>
+        <activiti:formProperty id="jurySuggestionReportTitle" name="Report Title" type="string" variable="reportTitle" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="jurySuggestion" name="Do you want a jury suggestion from the advisor?" type="enum" required="true">
+          <activiti:value id="true" name="Yes"></activiti:value>
+          <activiti:value id="false" name="No"></activiti:value>
+        </activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <userTask id="usertask4" name="Choose jury" activiti:assignee="admin">
+      <extensionElements>
+        <activiti:formProperty id="suggestedJuries" name="Suggested juries" type="list" variable="selectedTeachers" writable="false"></activiti:formProperty>
+        <activiti:formProperty id="selectedTeacher" name="Select a Jury" type="simpleSelect" variable="retrievedTeachers" required="true"></activiti:formProperty>
+        <activiti:taskListener event="complete" class="form.listener.RequestGuidanceListener"></activiti:taskListener>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow5" sourceRef="usertask4" targetRef="callactivity10"></sequenceFlow>
+    <userTask id="usertask5" name="Accept to be on jury" activiti:assignee="${selectedTeacherUsername}">
+      <extensionElements>
+        <activiti:formProperty id="juryAcceptance" name="Do you accept to be a jury?" type="enum" required="true">
+          <activiti:value id="true" name="Accept"></activiti:value>
+          <activiti:value id="false" name="Reject"></activiti:value>
+        </activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow6" sourceRef="usertask5" targetRef="exclusivegateway1"></sequenceFlow>
+    <userTask id="usertask6" name="Choose date and place" activiti:assignee="admin">
+      <extensionElements>
+        <activiti:formProperty id="testTitle" name="Report Title" type="string" variable="reportTitle" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="testStudentName" name="Student Name" type="string" variable="studentName" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="testAdvisorName" name="Advisor Name" type="string" variable="advisorName" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="testJury" name="Jury" type="string" variable="selectedTeacherName" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="location" name="Place of test" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="chosenDate" name="Choose a date" type="date" required="true"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow9" sourceRef="usertask6" targetRef="callactivity13"></sequenceFlow>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <exclusiveGateway id="exclusivegateway2" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow11" sourceRef="usertask2" targetRef="callactivity2"></sequenceFlow>
+    <sequenceFlow id="flow12" name="No suggestion required" sourceRef="exclusivegateway2" targetRef="usertask4">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${jurySuggestion == 'false'}]]></conditionExpression>
+    </sequenceFlow>
+    <callActivity id="callactivity2" name="Retrieve list of teachers" calledElement="retrieveTeachersList">
+      <extensionElements>
+        <activiti:out source="teachers" target="retrievedTeachers"></activiti:out>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow15" sourceRef="callactivity2" targetRef="exclusivegateway2"></sequenceFlow>
+    <userTask id="usertask8" name="Suggest Jury" activiti:assignee="${advisorUsername}">
+      <extensionElements>
+        <activiti:formProperty id="suggestionReportTitle" name="Report Title" type="string" variable="reportTitle" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="suggestionStudentName" name="Student Name" type="string" variable="studentName" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="teachers" name="Which jury do you suggest?" type="multiSelect" variable="retrievedTeachers" required="true"></activiti:formProperty>
+        <activiti:taskListener event="complete" class="form.listener.SuggestJuryListener"></activiti:taskListener>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow16" name="Asked for suggestion" sourceRef="exclusivegateway2" targetRef="callactivity5">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${jurySuggestion == 'true'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow17" sourceRef="usertask8" targetRef="usertask4"></sequenceFlow>
+    <callActivity id="callactivity3" name="Notify proponent" calledElement="notifyProponent">
+      <extensionElements>
+        <activiti:in source="proponentEmail" target="proponentEmail"></activiti:in>
+        <activiti:in source="proposalTitle" target="proposalTitle"></activiti:in>
+        <activiti:in source="studentName" target="studentName"></activiti:in>
+        <activiti:in source="selectedTeacherName" target="juryName"></activiti:in>
+        <activiti:in source="reportTitle" target="reportTitle"></activiti:in>
+        <activiti:in sourceExpression="Your proposal has now a jury" target="subject"></activiti:in>
+        <activiti:in sourceExpression="The guidance of your proposal ${proposalTitle}, assigned to the student ${studentName}, has now the jury ${selectedTeacherName}." target="content"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow18" name="Accept" sourceRef="exclusivegateway1" targetRef="callactivity12">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${juryAcceptance == 'true'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow19" sourceRef="callactivity3" targetRef="usertask6"></sequenceFlow>
+    <callActivity id="callactivity4" name="Notify proponent" calledElement="notifyProponent">
+      <extensionElements>
+        <activiti:in source="proponentEmail" target="proponentEmail"></activiti:in>
+        <activiti:in source="studentName" target="studentName"></activiti:in>
+        <activiti:in source="proposalTitle" target="proposalTitle"></activiti:in>
+        <activiti:in source="teacherName" target="juryName"></activiti:in>
+        <activiti:in sourceExpression="Your proposal still doesn't have an advisor" target="subject"></activiti:in>
+        <activiti:in sourceExpression="The guidance of your proposal ${proposalTitle}, assigned to the student ${studentName}, has been rejected by the jury ${selectedTeacherName}." target="content"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow20" name="Reject" sourceRef="exclusivegateway1" targetRef="callactivity11">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${juryAcceptance == 'false'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow21" sourceRef="callactivity4" targetRef="usertask4"></sequenceFlow>
+    <callActivity id="callactivity5" name="Notify advisor" calledElement="notifyUser">
+      <extensionElements>
+        <activiti:in source="advisorEmail" target="userEmail"></activiti:in>
+        <activiti:in source="proposalTitle" target="proposalTitle"></activiti:in>
+        <activiti:in source="studentName" target="studentName"></activiti:in>
+        <activiti:in sourceExpression="Your opinion is needed" target="subject"></activiti:in>
+        <activiti:in sourceExpression="The RUC has asked for you opinion choosing a jury for the proposal ${proposalTitle} of your advisee ${studentName}." target="content"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow22" sourceRef="callactivity5" targetRef="usertask8"></sequenceFlow>
+    <callActivity id="callactivity6" name="Notify jury" calledElement="notifyUser">
+      <extensionElements>
+        <activiti:in source="selectedTeacherEmail" target="userEmail"></activiti:in>
+        <activiti:in source="proposalTitle" target="proposalTitle"></activiti:in>
+        <activiti:in source="studentName" target="studentName"></activiti:in>
+        <activiti:in sourceExpression="You have been asked to be a jury" target="subject"></activiti:in>
+        <activiti:in sourceExpression="You have been asked to be a jury of the proposal ${proposalTitle} of the student ${studentName}." target="content"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow23" sourceRef="callactivity6" targetRef="usertask5"></sequenceFlow>
+    <boundaryEvent id="boundarytimer1" name="Timer" attachedToRef="usertask8" cancelActivity="true">
+      <timerEventDefinition>
+        <timeDuration>PT${timeLimit + timeLimit / 4}S</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <boundaryEvent id="boundarytimer2" name="Timer" attachedToRef="usertask8" cancelActivity="false">
+      <timerEventDefinition>
+        <timeDuration>PT${timeLimit}S</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <sequenceFlow id="flow24" sourceRef="boundarytimer1" targetRef="usertask2"></sequenceFlow>
+    <callActivity id="callactivity7" name="Notify advisor" calledElement="notifyUser">
+      <extensionElements>
+        <activiti:in source="advisorEmail" target="userEmail"></activiti:in>
+        <activiti:in sourceExpression="Please review request to suggest a jury" target="subject"></activiti:in>
+        <activiti:in sourceExpression="Please review request to suggest a jury to the proposal with title ${proposalTitle}. You have ${timeLimit / 4} seconds remaining" target="content"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow25" sourceRef="boundarytimer2" targetRef="callactivity7"></sequenceFlow>
+    <boundaryEvent id="boundarytimer3" name="Timer" attachedToRef="usertask5" cancelActivity="true">
+      <timerEventDefinition>
+        <timeDuration>PT${timeLimit + timeLimit / 4}S</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <boundaryEvent id="boundarytimer4" name="Timer" attachedToRef="usertask5" cancelActivity="false">
+      <timerEventDefinition>
+        <timeDuration>PT${timeLimit}S</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <sequenceFlow id="flow26" sourceRef="boundarytimer3" targetRef="usertask4"></sequenceFlow>
+    <callActivity id="callactivity8" name="Notify jury" calledElement="notifyUser">
+      <extensionElements>
+        <activiti:in source="advisorEmail" target="userEmail"></activiti:in>
+        <activiti:in sourceExpression="Please review request to be a jury to proposal with title ${proposalTitle}" target="subject"></activiti:in>
+        <activiti:in sourceExpression="Please review request to be a jury to the proposal with title ${proposalTitle}. You have ${timeLimit / 4} seconds remaining" target="content"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow27" sourceRef="boundarytimer4" targetRef="callactivity8"></sequenceFlow>
+    <callActivity id="callactivity9" name="Update proposal state" calledElement="updateProposalState">
+      <extensionElements>
+        <activiti:in source="proposalid" target="id"></activiti:in>
+        <activiti:in sourceExpression="report_submitted" target="state"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow28" sourceRef="callactivity9" targetRef="usertask2"></sequenceFlow>
+    <callActivity id="callactivity10" name="Update proposal state" calledElement="updateProposalState">
+      <extensionElements>
+        <activiti:in source="proposalid" target="id"></activiti:in>
+        <activiti:in sourceExpression="jury_invited" target="state"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow29" sourceRef="callactivity10" targetRef="callactivity6"></sequenceFlow>
+    <callActivity id="callactivity11" name="Update proposal state" calledElement="updateProposalState">
+      <extensionElements>
+        <activiti:in source="proposalid" target="id"></activiti:in>
+        <activiti:in sourceExpression="jury_rejected" target="state"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow30" sourceRef="callactivity11" targetRef="callactivity4"></sequenceFlow>
+    <callActivity id="callactivity12" name="Update proposal state" calledElement="updateProposalState">
+      <extensionElements>
+        <activiti:in source="proposalid" target="id"></activiti:in>
+        <activiti:in sourceExpression="jury_chosen" target="state"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow31" sourceRef="callactivity12" targetRef="callactivity3"></sequenceFlow>
+    <userTask id="usertask7" name="Submit grade" activiti:assignee="admin">
+      <extensionElements>
+        <activiti:formProperty id="gradeReportTitle" name="Report title" type="string" variable="reportTitle" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="grade" name="Submit grade" type="long" required="true"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow10" sourceRef="usertask7" targetRef="callactivity14"></sequenceFlow>
+    <callActivity id="callactivity14" name="Update proposal state" calledElement="updateProposalState">
+      <extensionElements>
+        <activiti:in source="proposalid" target="id"></activiti:in>
+        <activiti:in sourceExpression="graded" target="state"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <callActivity id="callactivity13" name="Update proposal state" calledElement="updateProposalState">
+      <extensionElements>
+        <activiti:in source="proposalid" target="id"></activiti:in>
+        <activiti:in sourceExpression="date_place_chosen" target="state"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow32" sourceRef="callactivity13" targetRef="usertask7"></sequenceFlow>
+    <sequenceFlow id="flow33" sourceRef="callactivity14" targetRef="endevent1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Collaboration">
+    <bpmndi:BPMNPlane bpmnElement="Collaboration" id="BPMNPlane_Collaboration">
+      <bpmndi:BPMNShape bpmnElement="manageDefensePool" id="BPMNShape_manageDefensePool">
+        <omgdc:Bounds height="641.0" width="1401.0" x="100.0" y="90.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="lane1" id="BPMNShape_lane1">
+        <omgdc:Bounds height="150.0" width="1381.0" x="120.0" y="90.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="lane2" id="BPMNShape_lane2">
+        <omgdc:Bounds height="151.0" width="1381.0" x="120.0" y="240.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="lane3" id="BPMNShape_lane3">
+        <omgdc:Bounds height="150.0" width="1381.0" x="120.0" y="391.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="lane4" id="BPMNShape_lane4">
+        <omgdc:Bounds height="190.0" width="1381.0" x="120.0" y="541.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="130.0" y="110.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="BPMNShape_usertask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="180.0" y="100.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask2" id="BPMNShape_usertask2">
+        <omgdc:Bounds height="55.0" width="105.0" x="180.0" y="290.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask4" id="BPMNShape_usertask4">
+        <omgdc:Bounds height="55.0" width="105.0" x="700.0" y="290.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask5" id="BPMNShape_usertask5">
+        <omgdc:Bounds height="67.0" width="115.0" x="700.0" y="641.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundarytimer3" id="BPMNShape_boundarytimer3">
+        <omgdc:Bounds height="30.0" width="30.0" x="743.0" y="625.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundarytimer4" id="BPMNShape_boundarytimer4">
+        <omgdc:Bounds height="30.0" width="30.0" x="690.0" y="680.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway1" id="BPMNShape_exclusivegateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="874.0" y="690.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask6" id="BPMNShape_usertask6">
+        <omgdc:Bounds height="65.0" width="115.0" x="910.0" y="270.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="1460.0" y="285.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway2" id="BPMNShape_exclusivegateway2">
+        <omgdc:Bounds height="40.0" width="40.0" x="520.0" y="297.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity2" id="BPMNShape_callactivity2">
+        <omgdc:Bounds height="61.0" width="115.0" x="360.0" y="287.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask8" id="BPMNShape_usertask8">
+        <omgdc:Bounds height="55.0" width="105.0" x="480.0" y="460.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundarytimer1" id="BPMNShape_boundarytimer1">
+        <omgdc:Bounds height="30.0" width="30.0" x="518.0" y="440.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundarytimer2" id="BPMNShape_boundarytimer2">
+        <omgdc:Bounds height="30.0" width="30.0" x="520.0" y="500.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity3" id="BPMNShape_callactivity3">
+        <omgdc:Bounds height="71.0" width="111.0" x="970.0" y="546.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity4" id="BPMNShape_callactivity4">
+        <omgdc:Bounds height="61.0" width="113.0" x="838.0" y="543.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity5" id="BPMNShape_callactivity5">
+        <omgdc:Bounds height="55.0" width="105.0" x="330.0" y="460.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity6" id="BPMNShape_callactivity6">
+        <omgdc:Bounds height="69.0" width="111.0" x="510.0" y="610.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity7" id="BPMNShape_callactivity7">
+        <omgdc:Bounds height="55.0" width="105.0" x="780.0" y="440.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity8" id="BPMNShape_callactivity8">
+        <omgdc:Bounds height="55.0" width="105.0" x="330.0" y="668.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity9" id="BPMNShape_callactivity9">
+        <omgdc:Bounds height="55.0" width="105.0" x="180.0" y="170.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity10" id="BPMNShape_callactivity10">
+        <omgdc:Bounds height="55.0" width="105.0" x="450.0" y="546.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity11" id="BPMNShape_callactivity11">
+        <omgdc:Bounds height="55.0" width="105.0" x="846.0" y="617.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity12" id="BPMNShape_callactivity12">
+        <omgdc:Bounds height="55.0" width="105.0" x="1033.0" y="668.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask7" id="BPMNShape_usertask7">
+        <omgdc:Bounds height="55.0" width="105.0" x="1220.0" y="275.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity14" id="BPMNShape_callactivity14">
+        <omgdc:Bounds height="55.0" width="105.0" x="1340.0" y="275.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity13" id="BPMNShape_callactivity13">
+        <omgdc:Bounds height="55.0" width="105.0" x="1100.0" y="275.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="165.0" y="127.0"></omgdi:waypoint>
+        <omgdi:waypoint x="180.0" y="127.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="232.0" y="155.0"></omgdi:waypoint>
+        <omgdi:waypoint x="232.0" y="170.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="752.0" y="345.0"></omgdi:waypoint>
+        <omgdi:waypoint x="715.0" y="465.0"></omgdi:waypoint>
+        <omgdi:waypoint x="715.0" y="573.0"></omgdi:waypoint>
+        <omgdi:waypoint x="566.0" y="573.0"></omgdi:waypoint>
+        <omgdi:waypoint x="555.0" y="573.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="815.0" y="674.0"></omgdi:waypoint>
+        <omgdi:waypoint x="761.0" y="710.0"></omgdi:waypoint>
+        <omgdi:waypoint x="874.0" y="710.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
+        <omgdi:waypoint x="1025.0" y="302.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1100.0" y="302.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
+        <omgdi:waypoint x="285.0" y="317.0"></omgdi:waypoint>
+        <omgdi:waypoint x="360.0" y="317.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
+        <omgdi:waypoint x="560.0" y="317.0"></omgdi:waypoint>
+        <omgdi:waypoint x="700.0" y="317.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="39.0" width="100.0" x="570.0" y="256.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow15" id="BPMNEdge_flow15">
+        <omgdi:waypoint x="475.0" y="317.0"></omgdi:waypoint>
+        <omgdi:waypoint x="520.0" y="317.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow16" id="BPMNEdge_flow16">
+        <omgdi:waypoint x="540.0" y="337.0"></omgdi:waypoint>
+        <omgdi:waypoint x="540.0" y="366.0"></omgdi:waypoint>
+        <omgdi:waypoint x="382.0" y="366.0"></omgdi:waypoint>
+        <omgdi:waypoint x="382.0" y="460.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="99.0" x="422.0" y="350.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow17" id="BPMNEdge_flow17">
+        <omgdi:waypoint x="585.0" y="487.0"></omgdi:waypoint>
+        <omgdi:waypoint x="704.0" y="487.0"></omgdi:waypoint>
+        <omgdi:waypoint x="704.0" y="377.0"></omgdi:waypoint>
+        <omgdi:waypoint x="752.0" y="345.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow18" id="BPMNEdge_flow18">
+        <omgdi:waypoint x="914.0" y="710.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1033.0" y="695.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="32.0" x="934.0" y="695.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow19" id="BPMNEdge_flow19">
+        <omgdi:waypoint x="1025.0" y="546.0"></omgdi:waypoint>
+        <omgdi:waypoint x="967.0" y="335.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow20" id="BPMNEdge_flow20">
+        <omgdi:waypoint x="894.0" y="690.0"></omgdi:waypoint>
+        <omgdi:waypoint x="898.0" y="672.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="30.0" x="841.0" y="638.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow21" id="BPMNEdge_flow21">
+        <omgdi:waypoint x="894.0" y="543.0"></omgdi:waypoint>
+        <omgdi:waypoint x="890.0" y="317.0"></omgdi:waypoint>
+        <omgdi:waypoint x="805.0" y="317.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow22" id="BPMNEdge_flow22">
+        <omgdi:waypoint x="435.0" y="487.0"></omgdi:waypoint>
+        <omgdi:waypoint x="480.0" y="487.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow23" id="BPMNEdge_flow23">
+        <omgdi:waypoint x="621.0" y="644.0"></omgdi:waypoint>
+        <omgdi:waypoint x="700.0" y="674.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow24" id="BPMNEdge_flow24">
+        <omgdi:waypoint x="533.0" y="440.0"></omgdi:waypoint>
+        <omgdi:waypoint x="532.0" y="433.0"></omgdi:waypoint>
+        <omgdi:waypoint x="232.0" y="433.0"></omgdi:waypoint>
+        <omgdi:waypoint x="232.0" y="345.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow25" id="BPMNEdge_flow25">
+        <omgdi:waypoint x="550.0" y="515.0"></omgdi:waypoint>
+        <omgdi:waypoint x="571.0" y="531.0"></omgdi:waypoint>
+        <omgdi:waypoint x="830.0" y="531.0"></omgdi:waypoint>
+        <omgdi:waypoint x="832.0" y="495.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow26" id="BPMNEdge_flow26">
+        <omgdi:waypoint x="758.0" y="625.0"></omgdi:waypoint>
+        <omgdi:waypoint x="752.0" y="345.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow27" id="BPMNEdge_flow27">
+        <omgdi:waypoint x="690.0" y="695.0"></omgdi:waypoint>
+        <omgdi:waypoint x="435.0" y="695.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow28" id="BPMNEdge_flow28">
+        <omgdi:waypoint x="232.0" y="225.0"></omgdi:waypoint>
+        <omgdi:waypoint x="232.0" y="290.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow29" id="BPMNEdge_flow29">
+        <omgdi:waypoint x="450.0" y="573.0"></omgdi:waypoint>
+        <omgdi:waypoint x="416.0" y="574.0"></omgdi:waypoint>
+        <omgdi:waypoint x="416.0" y="644.0"></omgdi:waypoint>
+        <omgdi:waypoint x="510.0" y="644.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow30" id="BPMNEdge_flow30">
+        <omgdi:waypoint x="898.0" y="617.0"></omgdi:waypoint>
+        <omgdi:waypoint x="894.0" y="604.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow31" id="BPMNEdge_flow31">
+        <omgdi:waypoint x="1085.0" y="668.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1025.0" y="617.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
+        <omgdi:waypoint x="1325.0" y="302.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1340.0" y="302.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow32" id="BPMNEdge_flow32">
+        <omgdi:waypoint x="1205.0" y="302.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1220.0" y="302.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow33" id="BPMNEdge_flow33">
+        <omgdi:waypoint x="1445.0" y="302.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1460.0" y="302.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

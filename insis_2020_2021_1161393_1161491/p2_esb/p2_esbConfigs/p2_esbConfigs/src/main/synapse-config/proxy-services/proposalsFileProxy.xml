@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="proposalsFileProxy" startOnLoad="true" statistics="enable" trace="enable" transports="vfs" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <log level="full"/>
+            <sequence key="addProposals"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <log level="full"/>
+        </faultSequence>
+    </target>
+    <parameter name="transport.PollInterval">15</parameter>
+    <parameter name="transport.vfs.FileURI">file:///home/filipe/Downloads</parameter>
+    <parameter name="transport.vfs.ContentType">text/plain</parameter>
+    <parameter name="transport.vfs.ActionAfterProcess">MOVE</parameter>
+    <parameter name="transport.vfs.MoveAfterFailure">file:///home/filipe/Downloads/failure</parameter>
+    <parameter name="transport.vfs.FileNamePattern">.*.csv</parameter>
+    <parameter name="transport.vfs.MoveAfterProcess">file:///home/filipe/Downloads/original</parameter>
+</proxy>

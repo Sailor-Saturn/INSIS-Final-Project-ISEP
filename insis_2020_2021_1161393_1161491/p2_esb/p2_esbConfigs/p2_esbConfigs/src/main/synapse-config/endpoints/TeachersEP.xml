@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="TeachersEP" xmlns="http://ws.apache.org/ns/synapse">
+    <http method="get" uri-template="https://run.mocky.io/v3/cfcf6743-8e48-426d-83bb-f1d7dcb6983f">
+        <suspendOnFailure>
+            <initialDuration>-1</initialDuration>
+            <progressionFactor>1.0</progressionFactor>
+        </suspendOnFailure>
+        <markForSuspension>
+            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+        </markForSuspension>
+    </http>
+</endpoint>

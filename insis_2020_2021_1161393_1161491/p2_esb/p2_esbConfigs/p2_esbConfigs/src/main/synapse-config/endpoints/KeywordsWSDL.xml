@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="KeywordsWSDL" xmlns="http://ws.apache.org/ns/synapse">
+    <wsdl port="Port" service="Service" uri="file:C:\Users\stuff\Documents\ISEP\2S\INSIS\insis_2020_2021_1161393_1161491\p2_esb\datasources\keywords_wsdl.xml">
+        <suspendOnFailure>
+            <initialDuration>-1</initialDuration>
+            <progressionFactor>1.0</progressionFactor>
+        </suspendOnFailure>
+        <markForSuspension>
+            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+        </markForSuspension>
+    </wsdl>
+</endpoint>

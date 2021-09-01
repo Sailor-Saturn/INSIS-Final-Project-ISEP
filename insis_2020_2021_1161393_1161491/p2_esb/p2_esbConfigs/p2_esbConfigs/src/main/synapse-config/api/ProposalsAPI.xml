@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/proposal" name="ProposalsAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/save">
+        <inSequence>
+            <log level="full">
+                <property expression="json-eval($)" name="request payload"/>
+                <property expression="json-eval($.title)" name="title"/>
+                <property expression="json-eval($.problem)" name="problem"/>
+                <property expression="json-eval($.goals)" name="goals"/>
+                <property expression="json-eval($.technologies)" name="technologies"/>
+                <property expression="json-eval($.approaches)" name="approaches"/>
+                <property expression="json-eval($.keywords)" name="keywords"/>
+                <property expression="json-eval($.state)" name="state"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{ "_post_proposal": {  "title": "$1",  "problem": "$2",  "goals": "$3",  "technologies": "$4",  "keywords": "$5",  "approaches": "$6",  "state": "$7", "proponent": "$8" }}</format>
+                <args>
+                    <arg evaluator="json" expression="$.title"/>
+                    <arg evaluator="json" expression="$.problem"/>
+                    <arg evaluator="json" expression="$.goals"/>
+                    <arg evaluator="json" expression="$.technologies"/>
+                    <arg evaluator="json" expression="$.keywords"/>
+                    <arg evaluator="json" expression="$.approaches"/>
+                    <arg evaluator="json" expression="$.state"/>
+                    <arg evaluator="json" expression="$.proponent"/>
+                </args>
+            </payloadFactory>
+            <log>
+                <property expression="json-eval($)" name="payload to add proposal"/>
+            </log>
+            <send>
+                <endpoint key="AddProposal"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log level="full"/>
+            <datamapper config="gov:datamapper/dataMapper.dmc" inputSchema="gov:datamapper/dataMapper_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/dataMapper_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/dataMapper_xsltStyleSheet.xml"/>
+            <log level="full"/>
+            <send buildmessage="true"/>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/retrieve">
+        <inSequence>
+            <log level="full">
+                <property expression="woopi" name="request"/>
+            </log>
+            <send>
+                <endpoint key="RetrieveProposals"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <log level="full">
+                <property expression="test" name="message"/>
+            </log>
+            <send buildmessage="true"/>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/retrieve/state">
+        <inSequence>
+            <log level="full">
+                <property expression="get-property('query.param.state')" name="state_query_param"/>
+            </log>
+            <send>
+                <endpoint key="RetrieveProposalsByState"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <log level="full"/>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="PUT" uri-template="/updatestate">
+        <inSequence>
+            <log level="full"/>
+            <payloadFactory media-type="json">
+                <format>{ "_update_proposal": {  "id": "$1",  "state": "$2"}}</format>
+                <args>
+                    <arg evaluator="json" expression="$.id"/>
+                    <arg evaluator="json" expression="$.state"/>
+                </args>
+            </payloadFactory>
+            <send>
+                <endpoint key="UpdateState"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <log level="full"/>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{"message":$1,&#xd;
+"code:" $2}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:ERROR_MESSAGE"/>
+                    <arg evaluator="xml" expression="$ctx:ERROR_CODE"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>

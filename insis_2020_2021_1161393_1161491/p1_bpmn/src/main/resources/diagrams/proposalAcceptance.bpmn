@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <message id="startEvent" name="startEvent"></message>
+  <process id="main_process" name="Main Process" isExecutable="true">
+    <callActivity id="callactivity2" name="Proposal Acceptance" calledElement="proposalAcceptance">
+      <extensionElements>
+        <activiti:in source="problem" target="problem"></activiti:in>
+        <activiti:in source="goals" target="goals"></activiti:in>
+        <activiti:in source="keywords" target="keywords"></activiti:in>
+        <activiti:in source="technologies" target="technologies"></activiti:in>
+        <activiti:in source="approaches" target="approaches"></activiti:in>
+        <activiti:in source="proponentUsername" target="proponentUsername"></activiti:in>
+        <activiti:in source="proposalid" target="proposalid"></activiti:in>
+        <activiti:in source="title" target="title"></activiti:in>
+        <activiti:out source="studentUsername" target="studentUsername"></activiti:out>
+        <activiti:out source="proposalTitle" target="proposalTitle"></activiti:out>
+        <activiti:out source="studentName" target="studentName"></activiti:out>
+        <activiti:out source="selectedTeacherUsername" target="advisorUsername"></activiti:out>
+        <activiti:out source="studentEmail" target="studentEmail"></activiti:out>
+        <activiti:out source="selectedTeacherName" target="advisorName"></activiti:out>
+        <activiti:out source="selectedTeacherEmail" target="advisorEmail"></activiti:out>
+        <activiti:out source="timeLimit" target="timeLimit"></activiti:out>
+        <activiti:out source="rucEmail" target="rucEmail"></activiti:out>
+        <activiti:out source="proposalid" target="proposalid"></activiti:out>
+        <activiti:out source="proponentEmail" target="proponentEmail"></activiti:out>
+      </extensionElements>
+    </callActivity>
+    <callActivity id="callactivity3" name="Manage Formalization" calledElement="poolManageFormalization">
+      <extensionElements>
+        <activiti:in source="studentUsername" target="studentUsername"></activiti:in>
+        <activiti:in source="proposalTitle" target="proposalTitle"></activiti:in>
+        <activiti:in source="studentName" target="studentName"></activiti:in>
+        <activiti:in source="advisorUsername" target="advisorUsername"></activiti:in>
+        <activiti:in source="studentEmail" target="studentEmail"></activiti:in>
+        <activiti:in source="advisorName" target="advisorName"></activiti:in>
+        <activiti:in source="advisorEmail" target="advisorEmail"></activiti:in>
+        <activiti:in source="proponentEmail" target="proponentEmail"></activiti:in>
+        <activiti:in source="timeLimit" target="timeLimit"></activiti:in>
+        <activiti:in source="rucEmail" target="rucEmail"></activiti:in>
+        <activiti:in source="proposalid" target="proposalid"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow3" sourceRef="callactivity2" targetRef="callactivity3"></sequenceFlow>
+    <callActivity id="callactivity4" name="Manage defense" calledElement="pool_manageDefensePool">
+      <extensionElements>
+        <activiti:in source="studentUsername" target="studentUsername"></activiti:in>
+        <activiti:in source="advisorUsername" target="advisorUsername"></activiti:in>
+        <activiti:in source="studentName" target="studentName"></activiti:in>
+        <activiti:in source="advisorName" target="advisorName"></activiti:in>
+        <activiti:in source="proponentEmail" target="proponentEmail"></activiti:in>
+        <activiti:in source="proposalTitle" target="proposalTitle"></activiti:in>
+        <activiti:in source="advisorEmail" target="advisorEmail"></activiti:in>
+        <activiti:in source="timeLimit" target="timeLimit"></activiti:in>
+        <activiti:in source="rucEmail" target="rucEmail"></activiti:in>
+        <activiti:in source="proposalid" target="proposalid"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow4" sourceRef="callactivity4" targetRef="endevent1"></sequenceFlow>
+    <sequenceFlow id="flow5" sourceRef="callactivity3" targetRef="callactivity4"></sequenceFlow>
+    <startEvent id="messagestartevent1" name="Message start">
+      <messageEventDefinition messageRef="startEvent"></messageEventDefinition>
+    </startEvent>
+    <sequenceFlow id="flow6" sourceRef="messagestartevent1" targetRef="callactivity2"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_main_process">
+    <bpmndi:BPMNPlane bpmnElement="main_process" id="BPMNPlane_main_process">
+      <bpmndi:BPMNShape bpmnElement="callactivity2" id="BPMNShape_callactivity2">
+        <omgdc:Bounds height="71.0" width="121.0" x="250.0" y="110.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity3" id="BPMNShape_callactivity3">
+        <omgdc:Bounds height="71.0" width="141.0" x="470.0" y="110.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity4" id="BPMNShape_callactivity4">
+        <omgdc:Bounds height="71.0" width="141.0" x="710.0" y="110.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="1000.0" y="128.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="messagestartevent1" id="BPMNShape_messagestartevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="130.0" y="128.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="371.0" y="145.0"></omgdi:waypoint>
+        <omgdi:waypoint x="470.0" y="145.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="851.0" y="145.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1000.0" y="145.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="611.0" y="145.0"></omgdi:waypoint>
+        <omgdi:waypoint x="710.0" y="145.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="165.0" y="145.0"></omgdi:waypoint>
+        <omgdi:waypoint x="250.0" y="145.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

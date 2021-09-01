@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: insis.proposal.query
+  rabbitmq:
+    host: rabbitmq
+server:
+  port: 8082

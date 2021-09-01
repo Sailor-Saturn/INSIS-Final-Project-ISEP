@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GetTechnologiesFromMockAPIService" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log>
+        <property name="msg" value="Getting Technologies from MockAPI"/>
+    </log>
+    <call>
+        <endpoint key="TempReplacementMockApiEP"/>
+    </call>
+    <filter xpath="count(//tecnologias) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="No Technologies from MockAPI"/>
+            </call-template>
+        </then>
+        <else>
+            <log>
+                <property name="msg" value="Retrieved technologies from MockAPI successfully"/>
+            </log>
+            <foreach expression="//jsonArray/jsonElement/tecnologias/text()" id="forEachTechnologiesMockAPI1">
+                <sequence>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <technology xmlns="">$1</technology>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//text()"/>
+                        </args>
+                    </payloadFactory>
+                </sequence>
+            </foreach>
+            <log level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$[:1].tecnologias[:1].technology[*]"/>
+                </args>
+            </payloadFactory>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

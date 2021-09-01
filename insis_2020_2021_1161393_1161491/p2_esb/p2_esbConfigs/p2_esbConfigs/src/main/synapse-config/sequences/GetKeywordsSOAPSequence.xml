@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GetKeywordsSOAPSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="request log">
+        <property name="msg" value="get keywords from mockable Sequence"/>
+    </log>
+    <payloadFactory description="add body" media-type="xml">
+        <format>
+            <body xmlns=""/>
+        </format>
+        <args/>
+    </payloadFactory>
+    <header description="SOAP Header" name="Action" scope="default" value="getKeywords"/>
+    <log description="log soap request" level="full"/>
+    <call>
+        <endpoint key="KeywordsWSDL"/>
+    </call>
+    <filter xpath="count(//*[name()='keyword']) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="No keywords from SOAP Endpoint -----teste123"/>
+            </call-template>
+        </then>
+        <else>
+            <log>
+                <property name="msg" value="Retrieved keywords from SOAP endpoint successfully"/>
+            </log>
+            <foreach expression="//*[name()='keyword']">
+                <sequence>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <keyword xmlns="">$1</keyword>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//Name/text()"/>
+                        </args>
+                    </payloadFactory>
+                </sequence>
+            </foreach>
+            <log level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$.Envelope.Body.keywords.keyword[*]"/>
+                </args>
+            </payloadFactory>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

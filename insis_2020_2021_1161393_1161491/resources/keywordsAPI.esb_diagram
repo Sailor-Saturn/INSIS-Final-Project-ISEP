@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_fQVcsLKFEeuflbtsvizLCQ" type="Esb" name="keywordsAPI" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_fQz90LKFEeuflbtsvizLCQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fQ0k4LKFEeuflbtsvizLCQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_fVmXMLKFEeuflbtsvizLCQ" type="3668" fontName="Sans">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_fVm-QLKFEeuflbtsvizLCQ" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_fV0ZoLKFEeuflbtsvizLCQ" type="3669">
+            <children xmi:type="notation:Node" xmi:id="_fV4rELKFEeuflbtsvizLCQ" type="3670">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_fV4rEbKFEeuflbtsvizLCQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_fV4rErKFEeuflbtsvizLCQ" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_fV4rE7KFEeuflbtsvizLCQ"/>
+              <element xmi:type="esb:APIResourceInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@inputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV4rFLKFEeuflbtsvizLCQ" x="86" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fV5SILKFEeuflbtsvizLCQ" type="3671">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_fV5SIbKFEeuflbtsvizLCQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_fV5SIrKFEeuflbtsvizLCQ" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_fV5SI7KFEeuflbtsvizLCQ"/>
+              <element xmi:type="esb:APIResourceOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@outputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV5SJLKFEeuflbtsvizLCQ" x="86" y="-23"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fV5SJbKFEeuflbtsvizLCQ" type="3730">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_fV5SJrKFEeuflbtsvizLCQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_fV5SJ7KFEeuflbtsvizLCQ" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_fV5SKLKFEeuflbtsvizLCQ"/>
+              <element xmi:type="esb:APIResourceOutSequenceOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV5SKbKFEeuflbtsvizLCQ" x="110" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fV55MLKFEeuflbtsvizLCQ" type="3672">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_fV55MbKFEeuflbtsvizLCQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_fV55MrKFEeuflbtsvizLCQ" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_fV55M7KFEeuflbtsvizLCQ"/>
+              <element xmi:type="esb:APIResourceFaultInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@faultInputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV55NLKFEeuflbtsvizLCQ" x="86" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fV55NbKFEeuflbtsvizLCQ" type="3673">
+              <children xmi:type="notation:Node" xmi:id="_fV9jkLKFEeuflbtsvizLCQ" type="3487">
+                <children xmi:type="notation:Node" xmi:id="_fWAm4LKFEeuflbtsvizLCQ" type="3608">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_fWAm5bKFEeuflbtsvizLCQ" type="7034">
+                    <children xmi:type="notation:Node" xmi:id="_fWcEsLKFEeuflbtsvizLCQ" type="3495">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_fWcrwLKFEeuflbtsvizLCQ" type="5168"/>
+                      <children xmi:type="notation:Node" xmi:id="_fWhkQLKFEeuflbtsvizLCQ" type="3018">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fWhkQbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fWhkQrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fWhkQ7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:LogMediatorInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fWhkRLKFEeuflbtsvizLCQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fWiLULKFEeuflbtsvizLCQ" type="3019">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fWiLUbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fWiLUrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fWiLU7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:LogMediatorOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fWiLVLKFEeuflbtsvizLCQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fWcEsbKFEeuflbtsvizLCQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_fWcEsrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_fWcEs7KFEeuflbtsvizLCQ"/>
+                      <element xmi:type="esb:LogMediator" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fWcEtLKFEeuflbtsvizLCQ" x="25" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fXGMALKFEeuflbtsvizLCQ" type="3597">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_fXGzELKFEeuflbtsvizLCQ" type="5191"/>
+                      <children xmi:type="notation:Node" xmi:id="_fXWqsLKFEeuflbtsvizLCQ" type="3598">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fXWqsbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fXWqsrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fXWqs7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:PayloadFactoryMediatorInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fXWqtLKFEeuflbtsvizLCQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fXX40LKFEeuflbtsvizLCQ" type="3599">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fXX40bKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fXX40rKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fXX407KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:PayloadFactoryMediatorOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fXX41LKFEeuflbtsvizLCQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fXGMAbKFEeuflbtsvizLCQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_fXGMArKFEeuflbtsvizLCQ" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_fXGMA7KFEeuflbtsvizLCQ"/>
+                      <element xmi:type="esb:PayloadFactoryMediator" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fXGMBLKFEeuflbtsvizLCQ" x="149" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fX6EULKFEeuflbtsvizLCQ" type="3516">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_fX6EVbKFEeuflbtsvizLCQ" type="5183"/>
+                      <children xmi:type="notation:Node" xmi:id="_fYEcYLKFEeuflbtsvizLCQ" type="3100">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYEcYbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fYEcYrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fYEcY7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:HeaderMediatorInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYEcZLKFEeuflbtsvizLCQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fYFDcLKFEeuflbtsvizLCQ" type="3101">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYFDcbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fYFDcrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fYFDc7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:HeaderMediatorOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYFDdLKFEeuflbtsvizLCQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fX6EUbKFEeuflbtsvizLCQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_fX6EUrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_fX6EU7KFEeuflbtsvizLCQ"/>
+                      <element xmi:type="esb:HeaderMediator" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fX6EVLKFEeuflbtsvizLCQ" x="273" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fYZzkLKFEeuflbtsvizLCQ" type="3495">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_fYZzlbKFEeuflbtsvizLCQ" type="5168"/>
+                      <children xmi:type="notation:Node" xmi:id="_fYbowLKFEeuflbtsvizLCQ" type="3018">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYbowbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fYbowrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fYbow7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:LogMediatorInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYboxLKFEeuflbtsvizLCQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fYcP0LKFEeuflbtsvizLCQ" type="3019">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYcP0bKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fYcP0rKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fYcP07KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:LogMediatorOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYcP1LKFEeuflbtsvizLCQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYZzkbKFEeuflbtsvizLCQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_fYZzkrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_fYZzk7KFEeuflbtsvizLCQ"/>
+                      <element xmi:type="esb:LogMediator" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYZzlLKFEeuflbtsvizLCQ" x="397" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fYprMLKFEeuflbtsvizLCQ" type="3742">
+                      <children xmi:type="notation:Node" xmi:id="_fYw_8LKFEeuflbtsvizLCQ" type="3743">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYw_8bKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fYw_8rKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fYw_87KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:CallMediatorInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYw_9LKFEeuflbtsvizLCQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fYxnALKFEeuflbtsvizLCQ" type="3744">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYxnAbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fYxnArKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fYxnA7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:CallMediatorOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYxnBLKFEeuflbtsvizLCQ" x="-11" y="-9"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fYy1ILKFEeuflbtsvizLCQ" type="3745">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYy1IbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fYy1IrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fYy1I7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:CallMediatorEndpointOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@endpointOutputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYy1JLKFEeuflbtsvizLCQ"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fYzcMLKFEeuflbtsvizLCQ" type="3746">
+                        <children xmi:type="notation:DecorationNode" xmi:id="_fYzcNbKFEeuflbtsvizLCQ" type="7047">
+                          <children xmi:type="notation:Node" xmi:id="_fZKokLKFEeuflbtsvizLCQ" type="3660">
+                            <children xmi:type="notation:DecorationNode" xmi:id="_fZKolbKFEeuflbtsvizLCQ" type="5165"/>
+                            <children xmi:type="notation:Node" xmi:id="_fZUZkLKFEeuflbtsvizLCQ" type="3661">
+                              <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZUZkbKFEeuflbtsvizLCQ"/>
+                              <styles xmi:type="notation:FontStyle" xmi:id="_fZUZkrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                              <styles xmi:type="notation:LineStyle" xmi:id="_fZUZk7KFEeuflbtsvizLCQ"/>
+                              <element xmi:type="esb:NamedEndpointInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@mediatorFlow/@children.0/@inputConnector"/>
+                              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZUZlLKFEeuflbtsvizLCQ"/>
+                            </children>
+                            <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZKokbKFEeuflbtsvizLCQ"/>
+                            <styles xmi:type="notation:FontStyle" xmi:id="_fZKokrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                            <styles xmi:type="notation:LineStyle" xmi:id="_fZKok7KFEeuflbtsvizLCQ"/>
+                            <element xmi:type="esb:NamedEndpoint" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@mediatorFlow/@children.0"/>
+                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZKolLKFEeuflbtsvizLCQ" x="5" y="103"/>
+                          </children>
+                          <styles xmi:type="notation:TitleStyle" xmi:id="_fYzcNrKFEeuflbtsvizLCQ" showTitle="true"/>
+                        </children>
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYzcMbKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fYzcMrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fYzcM7KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:MediatorFlow" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@mediatorFlow"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYzcNLKFEeuflbtsvizLCQ"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fYprMbKFEeuflbtsvizLCQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_fYprMrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_fYprM7KFEeuflbtsvizLCQ"/>
+                      <element xmi:type="esb:CallMediator" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fYprNLKFEeuflbtsvizLCQ" x="521" y="38" width="170" height="100"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fZlfULKFEeuflbtsvizLCQ" type="3739">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_fZlfVbKFEeuflbtsvizLCQ" type="5209"/>
+                      <children xmi:type="notation:Node" xmi:id="_fZpwwLKFEeuflbtsvizLCQ" type="3740">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZqX0LKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fZqX0bKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fZqX0rKFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:RespondMediatorInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.5/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZqX07KFEeuflbtsvizLCQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fZqX1LKFEeuflbtsvizLCQ" type="3741">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZqX1bKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fZqX1rKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fZqX17KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:RespondMediatorOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.5/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZqX2LKFEeuflbtsvizLCQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZlfUbKFEeuflbtsvizLCQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_fZlfUrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_fZlfU7KFEeuflbtsvizLCQ"/>
+                      <element xmi:type="esb:RespondMediator" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.5"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZlfVLKFEeuflbtsvizLCQ" x="731" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fZyToLKFEeuflbtsvizLCQ" type="3739">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_fZyTpbKFEeuflbtsvizLCQ" type="5209"/>
+                      <children xmi:type="notation:Node" xmi:id="_fZ1W8LKFEeuflbtsvizLCQ" type="3740">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZ1W8bKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fZ1W8rKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fZ1W87KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:RespondMediatorInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.6/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZ1W9LKFEeuflbtsvizLCQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fZ1W9bKFEeuflbtsvizLCQ" type="3741">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZ1W9rKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fZ1W97KFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fZ1W-LKFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:RespondMediatorOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.6/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZ1W-bKFEeuflbtsvizLCQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZyTobKFEeuflbtsvizLCQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_fZyTorKFEeuflbtsvizLCQ" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_fZyTo7KFEeuflbtsvizLCQ"/>
+                      <element xmi:type="esb:RespondMediator" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.6"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZyTpLKFEeuflbtsvizLCQ" x="25" y="200" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fZ8rsLKFEeuflbtsvizLCQ" type="3495">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_fZ8rtbKFEeuflbtsvizLCQ" type="5168"/>
+                      <children xmi:type="notation:Node" xmi:id="_fZ-g4LKFEeuflbtsvizLCQ" type="3018">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZ-g4bKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fZ-g4rKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fZ-g47KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:LogMediatorInputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZ-g5LKFEeuflbtsvizLCQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fZ_H8LKFEeuflbtsvizLCQ" type="3019">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZ_H8bKFEeuflbtsvizLCQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_fZ_H8rKFEeuflbtsvizLCQ" fontName="Sans"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_fZ_H87KFEeuflbtsvizLCQ"/>
+                        <element xmi:type="esb:LogMediatorOutputConnector" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZ_H9LKFEeuflbtsvizLCQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fZ8rsbKFEeuflbtsvizLCQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_fZ8rsrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_fZ8rs7KFEeuflbtsvizLCQ"/>
+                      <element xmi:type="esb:LogMediator" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fZ8rtLKFEeuflbtsvizLCQ" x="149" y="200" width="84" height="115"/>
+                    </children>
+                    <styles xmi:type="notation:TitleStyle" xmi:id="_fWAm5rKFEeuflbtsvizLCQ" showTitle="true"/>
+                  </children>
+                  <styles xmi:type="notation:DescriptionStyle" xmi:id="_fWAm4bKFEeuflbtsvizLCQ"/>
+                  <styles xmi:type="notation:FontStyle" xmi:id="_fWAm4rKFEeuflbtsvizLCQ" fontName="Sans"/>
+                  <styles xmi:type="notation:LineStyle" xmi:id="_fWAm47KFEeuflbtsvizLCQ"/>
+                  <element xmi:type="esb:MediatorFlow" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fWAm5LKFEeuflbtsvizLCQ"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_fV9jkbKFEeuflbtsvizLCQ"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_fV9jkrKFEeuflbtsvizLCQ" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_fV9jk7KFEeuflbtsvizLCQ"/>
+                <element xmi:type="esb:ProxyServiceSequenceAndEndpointContainer" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV9jlLKFEeuflbtsvizLCQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_fV-KoLKFEeuflbtsvizLCQ" type="3488">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_fV-KobKFEeuflbtsvizLCQ"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_fV-KorKFEeuflbtsvizLCQ" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_fV-Ko7KFEeuflbtsvizLCQ"/>
+                <element xmi:type="esb:ProxyServiceFaultContainer" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@faultContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV-KpLKFEeuflbtsvizLCQ"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_fV55NrKFEeuflbtsvizLCQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_fV55N7KFEeuflbtsvizLCQ" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_fV55OLKFEeuflbtsvizLCQ"/>
+              <element xmi:type="esb:ProxyServiceContainer" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV55ObKFEeuflbtsvizLCQ"/>
+            </children>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_fV0ZobKFEeuflbtsvizLCQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_fV0ZorKFEeuflbtsvizLCQ" fontName="Sans"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_fV0Zo7KFEeuflbtsvizLCQ"/>
+            <element xmi:type="esb:APIResource" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fV0ZpLKFEeuflbtsvizLCQ" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="resources/keywordsAPI.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fVmXMbKFEeuflbtsvizLCQ" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_fQz90bKFEeuflbtsvizLCQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fQz90rKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_fQz907KFEeuflbtsvizLCQ"/>
+    <element xmi:type="esb:EsbServer" href="resources/keywordsAPI.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fQz91LKFEeuflbtsvizLCQ"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_fQVcsbKFEeuflbtsvizLCQ"/>
+  <element xmi:type="esb:EsbDiagram" href="resources/keywordsAPI.esb#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_faT4ELKFEeuflbtsvizLCQ" type="4001" source="_fV5SILKFEeuflbtsvizLCQ" target="_fWhkQLKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_faT4EbKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_faT4ErKFEeuflbtsvizLCQ" points="[6, 5, -5, 0]$[5, 0, -6, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_faW7YLKFEeuflbtsvizLCQ" type="4001" source="_fWiLULKFEeuflbtsvizLCQ" target="_fXWqsLKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_faW7YbKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_faW7YrKFEeuflbtsvizLCQ" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fabM0LKFEeuflbtsvizLCQ" type="4001" source="_fXX40LKFEeuflbtsvizLCQ" target="_fYEcYLKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_fabM0bKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fabM0rKFEeuflbtsvizLCQ" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fafeQLKFEeuflbtsvizLCQ" type="4001" source="_fYFDcLKFEeuflbtsvizLCQ" target="_fYbowLKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_fafeQbKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fafeQrKFEeuflbtsvizLCQ" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fajIoLKFEeuflbtsvizLCQ" type="4001" source="_fYcP0LKFEeuflbtsvizLCQ" target="_fYw_8LKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_fajIobKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fajIorKFEeuflbtsvizLCQ" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_faoBILKFEeuflbtsvizLCQ" type="4001" source="_fYxnALKFEeuflbtsvizLCQ" target="_fZpwwLKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_faoBIbKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_faoBIrKFEeuflbtsvizLCQ" points="[-11, 0, -6, 0]$[1, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fauu0LKFEeuflbtsvizLCQ" type="4001" source="_fZ1W9bKFEeuflbtsvizLCQ" target="_fV4rELKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_fauu0bKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.6/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fauu0rKFEeuflbtsvizLCQ" points="[-11, 7, 80, 0]$[-85, 6, 6, -1]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fayZMLKFEeuflbtsvizLCQ" type="4001" source="_fZ_H8LKFEeuflbtsvizLCQ" target="_fZ1W8LKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_fayZMbKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fayZMrKFEeuflbtsvizLCQ" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fa2qoLKFEeuflbtsvizLCQ" type="4001" source="_fV5SJbKFEeuflbtsvizLCQ" target="_fZ-g4LKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_fa2qobKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fa2qorKFEeuflbtsvizLCQ" points="[-6, -4, 7, 3]$[-7, -4, 6, 3]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fbHJULKFEeuflbtsvizLCQ" type="4001" source="_fYy1ILKFEeuflbtsvizLCQ" target="_fZUZkLKFEeuflbtsvizLCQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_fbHJUbKFEeuflbtsvizLCQ" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/keywordsAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@endpointOutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fbHJUrKFEeuflbtsvizLCQ" points="[2, 9, -31, -110]$[31, 114, -2, -5]"/>
+  </edges>
+</notation:Diagram>

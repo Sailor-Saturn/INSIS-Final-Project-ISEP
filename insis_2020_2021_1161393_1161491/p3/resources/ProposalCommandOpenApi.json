@@ -1,0 +1,949 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "OpenAPI definition",
+		"version": "v0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8081",
+			"description": "Generated server url"
+		}
+	],
+	"paths": {
+		"/api/proposals/{id}": {
+			"put": {
+				"tags": [
+					"proposal-controller-impl"
+				],
+				"summary": "Update a proposal.",
+				"operationId": "updateProposal",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id of proposal to be updated",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateProposalDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"404": {
+						"description": "Invalid id supplied"
+					},
+					"200": {
+						"description": "Proposal updated",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Proposal"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"proposal-controller-impl"
+				],
+				"summary": "Delete a proposal.",
+				"operationId": "deleteProposal",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id of proposal to be deleted",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"404": {
+						"description": "Invalid id supplied"
+					},
+					"200": {
+						"description": "Proposal deleted"
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			},
+			"patch": {
+				"tags": [
+					"proposal-controller-impl"
+				],
+				"summary": "Update a proposal status.",
+				"operationId": "updateProposalStatus",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id of proposal to be updated",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "string",
+								"description": "The new proposal status"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"404": {
+						"description": "Invalid id supplied"
+					},
+					"200": {
+						"description": "Proposal updated",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Proposal"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			}
+		},
+		"/api/formalizations/{id}": {
+			"put": {
+				"tags": [
+					"formalization-controller-impl"
+				],
+				"summary": "Update a formalization.",
+				"operationId": "updateFormalization",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id of formalization to be updated",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateFormalizationDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "Formalization updated",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Proposal"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Invalid id supplied"
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"formalization-controller-impl"
+				],
+				"summary": "Delete a formalization.",
+				"operationId": "deleteFormalization",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id of formalization to be deleted",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"404": {
+						"description": "Invalid id supplied"
+					},
+					"200": {
+						"description": "Formalization deleted"
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			}
+		},
+		"/api/proposals": {
+			"post": {
+				"tags": [
+					"proposal-controller-impl"
+				],
+				"summary": "Create a proposal.",
+				"operationId": "createProposal",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateProposalDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"201": {
+						"description": "Proposal created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Proposal"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			}
+		},
+		"/api/formalizations": {
+			"post": {
+				"tags": [
+					"formalization-controller-impl"
+				],
+				"summary": "Formalize a proposal.",
+				"operationId": "createFormalization",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateFormalizationDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"201": {
+						"description": "Formalization created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Proposal"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			}
+		},
+		"/api/formalizations/status/{id}": {
+			"patch": {
+				"tags": [
+					"formalization-controller-impl"
+				],
+				"summary": "Update a formalization status.",
+				"operationId": "updateFormalizationStatus",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id of formalization to be updated",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "string"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"404": {
+						"description": "Invalid id supplied"
+					},
+					"200": {
+						"description": "Proposal updated",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Proposal"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal server error"
+					}
+				}
+			}
+		},
+		"/v3/api-docs": {
+			"get": {
+				"tags": [
+					"open-api-controller-web-mvc"
+				],
+				"operationId": "getDocumentation",
+				"parameters": [
+					{
+						"name": "group",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "string"
+								}
+							},
+							"application/hal+json": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v2/api-docs": {
+			"get": {
+				"tags": [
+					"swagger-2-controller-web-mvc"
+				],
+				"operationId": "getDocumentation_1",
+				"parameters": [
+					{
+						"name": "group",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "string"
+								}
+							},
+							"application/hal+json": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/swagger-resources/configuration/ui": {
+			"get": {
+				"tags": [
+					"api-resource-controller"
+				],
+				"operationId": "uiConfiguration",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UiConfiguration"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/swagger-resources/configuration/security": {
+			"get": {
+				"tags": [
+					"api-resource-controller"
+				],
+				"operationId": "securityConfiguration",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SecurityConfiguration"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/swagger-resources": {
+			"get": {
+				"tags": [
+					"api-resource-controller"
+				],
+				"operationId": "swaggerResources",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/SwaggerResource"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"UpdateProposalDTO": {
+				"required": [
+					"goals",
+					"problem",
+					"proponentId",
+					"proposalId",
+					"status",
+					"title"
+				],
+				"type": "object",
+				"properties": {
+					"proposalId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Proposal id"
+					},
+					"title": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal title"
+					},
+					"problem": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal description"
+					},
+					"goals": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal goals"
+					},
+					"technologies": {
+						"type": "array",
+						"description": "List of proposal technologies",
+						"items": {
+							"type": "string",
+							"description": "List of proposal technologies"
+						}
+					},
+					"keywords": {
+						"type": "array",
+						"description": "List of proposal keywords",
+						"items": {
+							"type": "string",
+							"description": "List of proposal keywords"
+						}
+					},
+					"approaches": {
+						"type": "array",
+						"description": "List of proposal approaches",
+						"items": {
+							"type": "string",
+							"description": "List of proposal approaches"
+						}
+					},
+					"proponentId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Proponent id"
+					},
+					"comment": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "RUC comment"
+					},
+					"status": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal status"
+					}
+				}
+			},
+			"Proposal": {
+				"type": "object",
+				"properties": {
+					"proposalId": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"problem": {
+						"type": "string"
+					},
+					"goals": {
+						"type": "string"
+					},
+					"technologies": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"keywords": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"approaches": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"proponentId": {
+						"type": "string"
+					},
+					"comment": {
+						"type": "string"
+					},
+					"proposalStatus": {
+						"type": "string",
+						"enum": [
+							"ANALYSIS",
+							"REJECTED",
+							"CANCELED",
+							"ACCEPTED",
+							"ERROR"
+						]
+					},
+					"proposalTimestamp": {
+						"type": "string",
+						"format": "date-time"
+					}
+				}
+			},
+			"UpdateFormalizationDTO": {
+				"required": [
+					"advisorId",
+					"approachOutcome1",
+					"approachOutcome2",
+					"contextDescription",
+					"formalizationId",
+					"formalizationStatus",
+					"internship",
+					"objectivesDescription",
+					"problemDescription",
+					"proposalId",
+					"studentId"
+				],
+				"type": "object",
+				"properties": {
+					"formalizationId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Formalization id"
+					},
+					"studentId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Student id"
+					},
+					"proposalId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Proposal id"
+					},
+					"contextDescription": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Context description"
+					},
+					"problemDescription": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Problem description"
+					},
+					"objectivesDescription": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Objectives description"
+					},
+					"approachOutcome1": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Approach description to achieve outcome 1"
+					},
+					"approachOutcome2": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Approach description to achieve outcome 2"
+					},
+					"internship": {
+						"maxLength": 10,
+						"type": "boolean",
+						"description": "Is it an Internship?"
+					},
+					"contextDescriptionComment": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Context description comment"
+					},
+					"problemDescriptionComment": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Problem description comment"
+					},
+					"objectivesDescriptionComment": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Objectives description comment"
+					},
+					"approachOutcome1Comment": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Approach description to achieve outcome 1 comment"
+					},
+					"approachOutcome2Comment": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Approach description to achieve outcome 2 comment"
+					},
+					"formalizationStatus": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Formalization status"
+					},
+					"advisorId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Advisor id"
+					},
+					"reviewersIds": {
+						"type": "array",
+						"description": "List of reviewers ids",
+						"items": {
+							"type": "string",
+							"description": "List of reviewers ids"
+						}
+					}
+				}
+			},
+			"CreateProposalDTO": {
+				"required": [
+					"goals",
+					"problem",
+					"proponentId",
+					"title"
+				],
+				"type": "object",
+				"properties": {
+					"title": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal title"
+					},
+					"problem": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal description"
+					},
+					"goals": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Proposal goals"
+					},
+					"technologies": {
+						"type": "array",
+						"description": "List of proposal technologies",
+						"items": {
+							"type": "string",
+							"description": "List of proposal technologies"
+						}
+					},
+					"keywords": {
+						"type": "array",
+						"description": "List of proposal keywords",
+						"items": {
+							"type": "string",
+							"description": "List of proposal keywords"
+						}
+					},
+					"approaches": {
+						"type": "array",
+						"description": "List of proposal approaches",
+						"items": {
+							"type": "string",
+							"description": "List of proposal approaches"
+						}
+					},
+					"proponentId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Proponent id"
+					}
+				}
+			},
+			"CreateFormalizationDTO": {
+				"required": [
+					"approachOutcome1",
+					"approachOutcome2",
+					"contextDescription",
+					"internship",
+					"objectivesDescription",
+					"problemDescription",
+					"proposalId",
+					"studentId"
+				],
+				"type": "object",
+				"properties": {
+					"studentId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Student id"
+					},
+					"proposalId": {
+						"maxLength": 30,
+						"type": "string",
+						"description": "Proposal id"
+					},
+					"contextDescription": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Context description"
+					},
+					"problemDescription": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Problem description"
+					},
+					"objectivesDescription": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Objectives description"
+					},
+					"approachOutcome1": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Approach description to achieve outcome 1"
+					},
+					"approachOutcome2": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Approach description to achieve outcome 2"
+					},
+					"internship": {
+						"maxLength": 10,
+						"type": "boolean",
+						"description": "Is it an Internship?"
+					}
+				}
+			},
+			"UiConfiguration": {
+				"type": "object",
+				"properties": {
+					"deepLinking": {
+						"type": "boolean"
+					},
+					"displayOperationId": {
+						"type": "boolean"
+					},
+					"defaultModelsExpandDepth": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"defaultModelExpandDepth": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"defaultModelRendering": {
+						"type": "string",
+						"enum": [
+							"example",
+							"model"
+						]
+					},
+					"displayRequestDuration": {
+						"type": "boolean"
+					},
+					"docExpansion": {
+						"type": "string",
+						"enum": [
+							"none",
+							"list",
+							"full"
+						]
+					},
+					"filter": {
+						"type": "object"
+					},
+					"maxDisplayedTags": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"operationsSorter": {
+						"type": "string",
+						"enum": [
+							"alpha",
+							"method"
+						]
+					},
+					"showExtensions": {
+						"type": "boolean"
+					},
+					"showCommonExtensions": {
+						"type": "boolean"
+					},
+					"tagsSorter": {
+						"type": "string",
+						"enum": [
+							"alpha"
+						]
+					},
+					"validatorUrl": {
+						"type": "string"
+					},
+					"supportedSubmitMethods": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"swaggerBaseUiUrl": {
+						"type": "string"
+					}
+				}
+			},
+			"SecurityConfiguration": {
+				"type": "object",
+				"properties": {
+					"apiKey": {
+						"type": "string",
+						"deprecated": true
+					},
+					"apiKeyVehicle": {
+						"type": "string",
+						"deprecated": true
+					},
+					"apiKeyName": {
+						"type": "string",
+						"deprecated": true
+					},
+					"clientId": {
+						"type": "string"
+					},
+					"clientSecret": {
+						"type": "string"
+					},
+					"realm": {
+						"type": "string"
+					},
+					"appName": {
+						"type": "string"
+					},
+					"scopeSeparator": {
+						"type": "string"
+					},
+					"additionalQueryStringParams": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "object"
+						}
+					},
+					"useBasicAuthenticationWithAccessCodeGrant": {
+						"type": "boolean"
+					},
+					"enableCsrfSupport": {
+						"type": "boolean"
+					}
+				}
+			},
+			"SwaggerResource": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"url": {
+						"type": "string"
+					},
+					"swaggerVersion": {
+						"type": "string"
+					},
+					"location": {
+						"type": "string",
+						"deprecated": true
+					}
+				}
+			}
+		}
+	}
+}

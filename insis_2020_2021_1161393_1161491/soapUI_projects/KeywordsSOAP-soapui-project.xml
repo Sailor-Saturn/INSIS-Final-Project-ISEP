@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d0db302f-1b15-4a34-a359-2025867863d8" activeEnvironment="Default" name="KeywordsSOAP" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="fb8a3ad6-01e1-4060-a545-0183703c3092" wsaVersion="NONE" name="Binding" type="wsdl" bindingName="{http://demo5454737.mockable.io/service/1}Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/insisSoft/Keywords.WSDL.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\insisSoft\Keywords.WSDL.xml"><con:part><con:url>file:\C:\insisSoft\Keywords.WSDL.xml</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://demo5454737.mockable.io/service/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mio="http://demo5454737.mockable.io/service/1">
+  <wsdl:documentation>mockable.io generated WSDL</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://demo5454737.mockable.io/service/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="getKeywordsRequest" type="xsd:anyType"/>
+      <xsd:element name="getKeywordsResponse" type="xsd:anyType"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getKeywordsInputMessage">
+    <wsdl:part name="getKeywordsInputPart" element="mio:getKeywordsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getKeywordsOutputMessage">
+    <wsdl:part name="getKeywordsOutputPart" element="mio:getKeywordsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="PortType">
+    <wsdl:operation name="getKeywords">
+      <wsdl:input name="getKeywordsInput" message="mio:getKeywordsInputMessage"/>
+      <wsdl:output name="getKeywordsOutput" message="mio:getKeywordsOutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Binding" type="mio:PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getKeywords">
+      <soap:operation soapAction="getKeywords"/>
+      <wsdl:input name="getKeywordsInput">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getKeywordsOutput">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="Port" binding="mio:Binding">
+      <soap:address location="http://demo5454737.mockable.io/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://demo5454737.mockable.io/</con:endpoint></con:endpoints><con:operation id="3fe4e459-eac2-437b-869c-8a7442de4faf" isOneWay="false" action="getKeywords" name="getKeywords" bindingOperationName="getKeywords" type="Request-Response" outputName="getKeywordsOutput" inputName="getKeywordsInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="94530ae3-2670-4cbc-8629-6729e21aa99e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://demo5454737.mockable.io/service/1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://demo5454737.mockable.io/service/1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:getKeywordsRequest>?</ns:getKeywordsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getKeywords"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

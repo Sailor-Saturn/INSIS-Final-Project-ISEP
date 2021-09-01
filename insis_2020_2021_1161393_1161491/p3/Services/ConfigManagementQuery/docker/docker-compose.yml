@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  config-management-query:
+    container_name: config-management-query
+    build: ../.
+    environment:
+      - app_mongoURI: mongodb://mongo:27017/db
+      - app_amqpConfig__hostname: rabbitmq
+    ports:
+      - 3000:3000
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ../data:/data/db

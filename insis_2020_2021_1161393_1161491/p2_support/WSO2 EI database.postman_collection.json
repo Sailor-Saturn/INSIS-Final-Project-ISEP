@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "63600984-df55-4fb3-a158-693d0bf166d6",
+		"name": "WSO2 EI database",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save proposal",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_post_proposal\": {\n\t\t\"title\": \"title\",\n\t\t\"problem\": \"problem\",\n\t\t\"goals\": \"goals\",\n\t\t\"technologies\": \"technologies\",\n\t\t\"keywords\": \"keywords\",\n\t\t\"approaches\": \"approaches\",\n\t\t\"state\": \"state\",\n        \"proponent\": \"proponent\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8280/services/proposals_dataService/proposal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"services",
+						"proposals_dataService",
+						"proposal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET proposals",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8280/services/proposals_dataService/proposal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"services",
+						"proposals_dataService",
+						"proposal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Proposal - ESB",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true,
+					"content-type": true
+				},
+				"followRedirects": false,
+				"disableUrlEncoding": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"test title\",\n    \"problem\": \"little problemo\",\n    \"goals\": \"oupa goals\",\n    \"technologies\": \"technologies\",\n    \"approaches\": \"approaches\",\n    \"keywords\": \"keywords\",\n    \"state\": \"state\",\n    \"proponent\": \"proponent\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8280/proposal/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"proposal",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Proposals - ESB",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8280/proposal/retrieve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"proposal",
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Proposal by state",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8280/services/proposals_dataService/proposal/state?state=canceled",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"services",
+						"proposals_dataService",
+						"proposal",
+						"state"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "canceled"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Proposals By State - ESB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8280/proposal/retrieve/state?state=canceled",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"proposal",
+						"retrieve",
+						"state"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "canceled"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update proposal data service",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_update_proposal\": {\n\t\t\"id\": \"1\",\n\t\t\"state\": \"asdasdads\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8280/services/proposals_dataService/proposal/updateState",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"services",
+						"proposals_dataService",
+						"proposal",
+						"updateState"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update proposal state - ESB",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"170\",\n    \"state\": \"oupa coisita\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8280/proposal/updatestate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8280",
+					"path": [
+						"proposal",
+						"updatestate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start proposal acceptance",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"startEvent\",\n    \"tenantId\": \"-1234\",\n    \"variables\": [\n        {\n            \"name\": \"problem\",\n            \"value\": \"mucho problemo\"\n        },\n        {\n            \"name\": \"goals\",\n            \"value\": \"mucho goals\"\n        },\n        {\n            \"name\": \"title\",\n            \"value\": \"mucho title\"\n        },\n        {\n            \"name\": \"keywords\",\n            \"value\": [\"zeca\"]\n        },\n        {\n            \"name\": \"approaches\",\n            \"value\": [\"zeca\"]\n        },\n        {\n            \"name\": \"technologies\",\n            \"value\": [\"zeca\", \"nando\"]\n        },\n        {\n            \"name\": \"proponentUsername\",\n            \"value\": \"proponent1\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:9445/bpmn/runtime/process-instances",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9445",
+					"path": [
+						"bpmn",
+						"runtime",
+						"process-instances"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_kNRPkLTcEeuEVdJCJwvXAg" type="DataMapper" name="fireProposalDataMapper.datamapper_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_kUUSwLTcEeuEVdJCJwvXAg" type="2002" fontName="Sans">
+    <children xmi:type="notation:Shape" xmi:id="_rLSVILTdEeuEVdJCJwvXAg" type="3002" fontName="Sans">
+      <children xmi:type="notation:DecorationNode" xmi:id="_rLS8MLTdEeuEVdJCJwvXAg" type="5002"/>
+      <children xmi:type="notation:Shape" xmi:id="_rLbfELTdEeuEVdJCJwvXAg" type="3003" fontName="Sans">
+        <children xmi:type="notation:DecorationNode" xmi:id="_rLbfErTdEeuEVdJCJwvXAg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_rLg-oLTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+          <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLg-obTdEeuEVdJCJwvXAg" x="-11" y="-9"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_rLhlsLTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+          <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLhlsbTdEeuEVdJCJwvXAg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLbfEbTdEeuEVdJCJwvXAg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_rLbfE7TdEeuEVdJCJwvXAg" type="3003" fontName="Sans">
+        <children xmi:type="notation:DecorationNode" xmi:id="_rLbfFbTdEeuEVdJCJwvXAg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_rLr9wLTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+          <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.1/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLr9wbTdEeuEVdJCJwvXAg" x="-11" y="-9"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_rLr9wrTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+          <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.1/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLr9w7TdEeuEVdJCJwvXAg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLbfFLTdEeuEVdJCJwvXAg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_rLbfFrTdEeuEVdJCJwvXAg" type="3003" fontName="Sans">
+        <children xmi:type="notation:DecorationNode" xmi:id="_rLbfGLTdEeuEVdJCJwvXAg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_rLty8LTdEeuEVdJCJwvXAg" type="3003" fontName="Sans">
+          <children xmi:type="notation:DecorationNode" xmi:id="_rLty8rTdEeuEVdJCJwvXAg" type="5001"/>
+          <children xmi:type="notation:Shape" xmi:id="_rLvBELTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+            <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2/@node.0/@inNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLvBEbTdEeuEVdJCJwvXAg" x="-11" y="-9"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_rLvBErTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+            <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2/@node.0/@outNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLvBE7TdEeuEVdJCJwvXAg"/>
+          </children>
+          <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2/@node.0"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLty8bTdEeuEVdJCJwvXAg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_rLty87TdEeuEVdJCJwvXAg" type="3003" fontName="Sans">
+          <children xmi:type="notation:DecorationNode" xmi:id="_rLty9bTdEeuEVdJCJwvXAg" type="5001"/>
+          <children xmi:type="notation:Shape" xmi:id="_rLw2QLTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+            <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2/@node.1/@inNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLw2QbTdEeuEVdJCJwvXAg" x="-11" y="-9"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_rLw2QrTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+            <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2/@node.1/@outNode"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLw2Q7TdEeuEVdJCJwvXAg"/>
+          </children>
+          <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2/@node.1"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLty9LTdEeuEVdJCJwvXAg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_rLty9rTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+          <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLty97TdEeuEVdJCJwvXAg" x="-1" y="-11"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_rLty-LTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+          <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLty-bTdEeuEVdJCJwvXAg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLbfF7TdEeuEVdJCJwvXAg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_rLcGILTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+        <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLcGIbTdEeuEVdJCJwvXAg" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_rLcGIrTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+        <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLcGI7TdEeuEVdJCJwvXAg"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rLSVIbTdEeuEVdJCJwvXAg"/>
+    </children>
+    <element xmi:type="datamapper:Input" href="fireProposalDataMapper.datamapper#//@input"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kUUSwbTcEeuEVdJCJwvXAg" x="84" y="84" width="250" height="120"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_kUU50LTcEeuEVdJCJwvXAg" type="2003" fontName="Sans">
+    <children xmi:type="notation:Shape" xmi:id="_uhbKgLTdEeuEVdJCJwvXAg" type="3011" fontName="Sans">
+      <children xmi:type="notation:DecorationNode" xmi:id="_uhbKgrTdEeuEVdJCJwvXAg" type="5003"/>
+      <children xmi:type="notation:Shape" xmi:id="_uhhRILTdEeuEVdJCJwvXAg" type="3003" fontName="Sans">
+        <children xmi:type="notation:DecorationNode" xmi:id="_uhhRIrTdEeuEVdJCJwvXAg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_uhifQLTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+          <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhifQbTdEeuEVdJCJwvXAg" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_uhifQrTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+          <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhifQ7TdEeuEVdJCJwvXAg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhhRIbTdEeuEVdJCJwvXAg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_uhhRI7TdEeuEVdJCJwvXAg" type="3003" fontName="Sans">
+        <children xmi:type="notation:DecorationNode" xmi:id="_uhhRJbTdEeuEVdJCJwvXAg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_uhkUcLTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+          <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.1/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhkUcbTdEeuEVdJCJwvXAg" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_uhkUcrTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+          <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.1/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhkUc7TdEeuEVdJCJwvXAg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhhRJLTdEeuEVdJCJwvXAg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_uhhRJrTdEeuEVdJCJwvXAg" type="3003" fontName="Sans">
+        <children xmi:type="notation:DecorationNode" xmi:id="_uhhRKLTdEeuEVdJCJwvXAg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_uhmwtrTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+          <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.2/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhmwt7TdEeuEVdJCJwvXAg" x="-1" y="-11"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_uhmwuLTdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+          <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.2/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhmwubTdEeuEVdJCJwvXAg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@node.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhhRJ7TdEeuEVdJCJwvXAg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_uhhRKbTdEeuEVdJCJwvXAg" type="3020" fontName="Sans">
+        <element xmi:type="datamapper:InNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhhRKrTdEeuEVdJCJwvXAg" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_uhhRK7TdEeuEVdJCJwvXAg" type="3019" fontName="Sans">
+        <element xmi:type="datamapper:OutNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhhRLLTdEeuEVdJCJwvXAg"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="fireProposalDataMapper.datamapper#//@output/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uhbKgbTdEeuEVdJCJwvXAg"/>
+    </children>
+    <element xmi:type="datamapper:Output" href="fireProposalDataMapper.datamapper#//@output"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kUU50bTcEeuEVdJCJwvXAg" x="444" y="108" width="250" height="120"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_kNRPkbTcEeuEVdJCJwvXAg"/>
+  <element xmi:type="datamapper:DataMapperRoot" href="fireProposalDataMapper.datamapper#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_vOH4cLTdEeuEVdJCJwvXAg" type="4001" source="_rLhlsLTdEeuEVdJCJwvXAg" target="_uhifQLTdEeuEVdJCJwvXAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_vOH4cbTdEeuEVdJCJwvXAg" fontName="Sans"/>
+    <element xmi:type="datamapper:DataMapperLink" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vOH4crTdEeuEVdJCJwvXAg" points="[-2, 0, -252, 0]$[248, 0, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vOUFsLTdEeuEVdJCJwvXAg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vOUFsbTdEeuEVdJCJwvXAg" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_BNpZELTeEeuEVdJCJwvXAg" type="4001" source="_rLr9wrTdEeuEVdJCJwvXAg" target="_uhkUcLTdEeuEVdJCJwvXAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_BNpZEbTeEeuEVdJCJwvXAg" fontName="Sans"/>
+    <element xmi:type="datamapper:DataMapperLink" href="fireProposalDataMapper.datamapper#//@input/@treeNode.0/@node.1/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BNpZErTeEeuEVdJCJwvXAg" points="[-2, 0, -112, -24]$[108, 24, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BNqAILTeEeuEVdJCJwvXAg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BNqAIbTeEeuEVdJCJwvXAg" id="CENTER"/>
+  </edges>
+</notation:Diagram>

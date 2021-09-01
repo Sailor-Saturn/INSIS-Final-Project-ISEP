@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/chooseReviewers">
+  <process id="chooseReviewers" name="Choose Reviewers" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <callActivity id="callactivity1" name="Retrieve Reviewers List" calledElement="retrieveTeachersList">
+      <extensionElements>
+        <activiti:out source="teachers" target="retrievedReviewers"></activiti:out>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="callactivity1"></sequenceFlow>
+    <userTask id="usertask1" name="Assign reviewers" activiti:assignee="admin">
+      <extensionElements>
+        <activiti:formProperty id="assignProposalTitle" name="Title of Proposal" type="string" variable="inProposalTitle" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="assignStudentName" name="Student Name" type="string" variable="inStudentName" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="assignAdvisorName" name="Advisor Name" type="string" variable="inAdvisorName" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="selectedReviewers" name="Reviewers" type="multiSelect" variable="retrievedReviewers" required="true"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow2" sourceRef="callactivity1" targetRef="usertask1"></sequenceFlow>
+    <serviceTask id="servicetask1" name="Parse selected reviewers" activiti:class="services.ParseReviewersById"></serviceTask>
+    <sequenceFlow id="flow3" sourceRef="usertask1" targetRef="servicetask1"></sequenceFlow>
+    <callActivity id="callactivity2" name="Notify Reviewers" calledElement="notifyMultipleUsers">
+      <extensionElements>
+        <activiti:in source="chosenReviewersJson" target="users"></activiti:in>
+        <activiti:in sourceExpression="You have been chosen to review a proposal" target="notificationTitle"></activiti:in>
+        <activiti:in sourceExpression="Please review it" target="notificationContent"></activiti:in>
+      </extensionElements>
+    </callActivity>
+    <sequenceFlow id="flow4" sourceRef="servicetask1" targetRef="callactivity2"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_chooseReviewers">
+    <bpmndi:BPMNPlane bpmnElement="chooseReviewers" id="BPMNPlane_chooseReviewers">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="80.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity1" id="BPMNShape_callactivity1">
+        <omgdc:Bounds height="55.0" width="105.0" x="170.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="BPMNShape_usertask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="340.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask1" id="BPMNShape_servicetask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="510.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callactivity2" id="BPMNShape_callactivity2">
+        <omgdc:Bounds height="55.0" width="105.0" x="670.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="115.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="170.0" y="167.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="275.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="340.0" y="167.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="445.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="510.0" y="167.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="615.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="670.0" y="167.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

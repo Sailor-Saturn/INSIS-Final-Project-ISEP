@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="addProposals" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full">
+        <property name="sequence" value="before-smooks"/>
+    </log>
+    <smooks config-key="smooks_config">
+        <input type="text"/>
+        <output type="xml"/>
+    </smooks>
+    <log level="full">
+        <property name="sequence" value="after-smooks"/>
+    </log>
+    <iterate expression="//csv-set/csv-record[position()>1]" xmlns:ns2="http://org.apache.synapse/xsd" xmlns:sec="http://secservice.samples.esb.wso2.org">
+        <target>
+            <sequence>
+                <property expression="//csv-record/title" name="proposalTitle" scope="default" type="STRING"/>
+                <property expression="//csv-record/problem" name="proposalProblem" scope="default" type="STRING"/>
+                <property expression="//csv-record/goals" name="proposalGoals" scope="default" type="STRING"/>
+                <property expression="//csv-record/technologies" name="proposalTechnologies" scope="default" type="STRING"/>
+                <property expression="//csv-record/approaches" name="proposalApproaches" scope="default" type="STRING"/>
+                <property expression="//csv-record/keywords" name="proposalKeywords" scope="default" type="STRING"/>
+                <property expression="//csv-record/proponent" name="proposalProponent" scope="default" type="STRING"/>
+                <property expression="//csv-record" name="proposal" scope="default" type="STRING"/>
+                <sequence key="saveProposalToDB"/>
+                <property expression="json-eval($.GeneratedKeys.proposal[0].ID)" name="proposalId" scope="default" type="STRING"/>
+                <sequence key="fireAcceptProposalTask"/>
+                <log level="full"/>
+            </sequence>
+        </target>
+    </iterate>
+</sequence>

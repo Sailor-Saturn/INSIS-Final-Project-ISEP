@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="ApproachesBeeceptor" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="Sequence Approaches Beeceptor">
+        <property name="message" value="Sequence Approaches Beeceptor"/>
+    </log>
+    <call>
+        <endpoint key="MockyForBeeceptorKeywords"/>
+    </call>
+    <filter xpath="count(//name) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="Beeceptor does not have approaches"/>
+            </call-template>
+        </then>
+        <else>
+            <log description="Has approaches">
+                <property name="msg" value="Retrieved approaches from Beeceptor successfully"/>
+            </log>
+            <foreach expression="//jsonArray/jsonElement" id="groupEachOne">
+                <sequence>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <approach xmlns="">$1</approach>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//name"/>
+                        </args>
+                    </payloadFactory>
+                </sequence>
+            </foreach>
+            <log level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$.approach[*]"/>
+                </args>
+            </payloadFactory>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

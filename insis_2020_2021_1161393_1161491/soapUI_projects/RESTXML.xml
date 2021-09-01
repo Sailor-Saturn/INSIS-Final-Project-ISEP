@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8fafc1dd-184f-4cc7-bc59-1987b8a47474" created="3.7.0" activeEnvironment="Default" name="Subject" resourceRoot="" updated="3.7.0 2021-03-30T19:14:40Z" abortOnError="false" runType="SEQUENTIAL" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config">
+	<con:settings/>
+	<con:interface xsi:type="con:RestService" id="2a892a98-ec5b-468f-9a10-873833528bae" wadlVersion="http://wadl.dev.java.net/2009/02" name="Mocky.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<con:settings/>
+		
+		<con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+			<con:endpoint>https://run.mocky.io</con:endpoint>
+		</con:endpoints>
+		<con:resource name="8513b9e1-ef95-4f8b-95f2-9734f692aa8c" path="/v3/48bd776e-3ba1-41f6-8794-08efd6e13bc4" id="af7d87a9-7f16-4b05-98de-a84128ee6694">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="Subjects" id="f0e95a75-5805-4b35-869d-784d2eecfdb1" method="GET">
+				<con:settings/>
+				<con:parameters/>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/xml; charset=UTF-8</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+					<con:element>approaches</con:element>
+				</con:representation>
+				<con:request name="All" id="19ee9d97-46cf-45d9-94c1-fed71f8d7e22" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>https://run.mocky.io</con:endpoint>
+					<con:request/>
+					<con:originalUri>https://run.mocky.io/v3/8513b9e1-ef95-4f8b-95f2-9734f692aa8c</con:originalUri>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/><con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+	</con:interface>
+	<con:properties/>
+	<con:wssContainer/>
+	<con:databaseConnectionContainer/>
+	<con:jmsConnectionContainer/>
+	<con:oAuth2ProfileContainer/>
+	<con:oAuth1ProfileContainer/>
+	<con:reporting>
+		<con:xmlTemplates/>
+		<con:parameters/>
+	</con:reporting>
+	<con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+		<con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls // This code is often used for adding custom authentication to ReadyAPI functional tests // If hardcoding the token, uncomment and change line 5 // token = '4567' // If your token is parameterized in Project level custom property, uncomment line 8 // token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue() // To modify all outgoing calls, remove comments from lines 11 to 16 // headers = request.requestHeaders // if (headers.containsKey('auth_token2') == false) { // headers.put('auth_token2', token) // request.requestHeaders = headers // }</con:script>
+	</con:eventHandlers>
+	<con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+		<con:script>// Save all test step results into files // Change the directory path in line 5 to a location where you want to store details // then uncomment lines 5 to 10 // filePath = 'C:\\tempOutputDirectory\\' // fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true) // pw = new java.io.PrintWriter(fos) // testStepResult.writeTo(pw) // pw.close() // fos.close()</con:script>
+	</con:eventHandlers>
+	<con:authRepository/>
+	<con:tags/>
+</con:soapui-project>

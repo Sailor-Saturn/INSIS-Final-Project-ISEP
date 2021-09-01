@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Sequence.xml</file>
+    </artifact>
+    <artifact name="saveProposalToDatabase" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/saveProposalToDatabase.xml</file>
+    </artifact>
+    <artifact name="RetrieveProposals" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/RetrieveProposals.xml</file>
+    </artifact>
+    <artifact name="RetrieveProposals" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/RetrieveProposals.xml</file>
+    </artifact>
+    <artifact name="RetrieveProposals" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/RetrieveProposals.xml</file>
+    </artifact>
+</artifacts>

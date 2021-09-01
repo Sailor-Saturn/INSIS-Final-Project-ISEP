@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="fireAcceptProposalTask" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full">
+        <property name="sequence" value="fireAcceptProposalTask"/>
+        <property expression="get-property('proposal')" name="proposal"/>
+    </log>
+    <payloadFactory media-type="json">
+        <format>{
+    "message": "startEvent",
+    "tenantId": "-1234",
+    "variables": [
+        {
+            "name": "problem",
+            "value": "$1"
+        },
+        {
+            "name": "goals",
+            "value": "$2"
+        },
+        {
+            "name": "title",
+            "value": "$3"
+        },
+        {
+            "name": "keywords",
+            "value": "$4"
+        },
+        {
+            "name": "approaches",
+            "value": "$5"
+        },
+        {
+            "name": "technologies",
+            "value": "$6"
+        },
+        {
+            "name": "proponentUsername",
+            "value": "$7"
+        },
+        {
+            "name": "proposalid",
+            "value": "$8"
+        }
+    ]
+}</format>
+        <args>
+            <arg evaluator="xml" expression="get-property('proposalProblem')"/>
+            <arg evaluator="xml" expression="get-property('proposalGoals')"/>
+            <arg evaluator="xml" expression="get-property('proposalTitle')"/>
+            <arg evaluator="xml" expression="get-property('proposalKeywords')"/>
+            <arg evaluator="xml" expression="get-property('proposalApproaches')"/>
+            <arg evaluator="xml" expression="get-property('proposalTechnologies')"/>
+            <arg evaluator="xml" expression="get-property('proposalProponent')"/>
+            <arg evaluator="xml" expression="get-property('proposalId')"/>
+        </args>
+    </payloadFactory>
+    <script language="js"><![CDATA[var log=mc.getServiceLog();
+var jsonPayload=mc.getPayloadJSON();
+jsonPayload.variables.forEach(function(varObject) {
+var varName = varObject.name;
+if (varName == 'keywords' || varName == 'approaches' || varName == 'technologies') {
+    varObject.value = varObject.value.split(',');
+  }
+});
+mc.setPayloadJSON(jsonPayload);]]></script>
+    <property expression="fn:concat('Basic ', base64Encode('admin:admin'))" name="Authorization" scope="transport" type="STRING"/>
+    <log level="full">
+        <property name="payload" value="woopi"/>
+    </log>
+    <send>
+        <endpoint key="fireAcceptProposal"/>
+    </send>
+</sequence>

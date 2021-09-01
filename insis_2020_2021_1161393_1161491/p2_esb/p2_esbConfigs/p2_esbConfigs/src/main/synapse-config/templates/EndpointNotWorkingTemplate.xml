@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="EndpointNotWorkingTemplate" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter defaultValue="" isMandatory="false" name="message"/>
+    <sequence>
+        <log level="custom">
+            <property expression="$func:message" name="ERROR_MESSAGE"/>
+        </log>
+        <payloadFactory media-type="json">
+            <format>[{}]</format>
+            <args/>
+        </payloadFactory>
+    </sequence>
+</template>

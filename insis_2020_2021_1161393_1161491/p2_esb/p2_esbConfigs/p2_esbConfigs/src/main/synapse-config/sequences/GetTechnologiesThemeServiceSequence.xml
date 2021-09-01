@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GetTechnologiesThemeServiceSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="request log">
+        <property name="msg" value="Retrieving technologies from Theme Service Sequence"/>
+    </log>
+    <property name="REST_URL_POSTFIX" scope="default" type="STRING" value=""/>
+    <payloadFactory media-type="xml">
+        <format>
+            <dat:GetThemes xmlns:dat="http://ws.wso2.org/dataservice"/>
+        </format>
+        <args/>
+    </payloadFactory>
+    <log level="full"/>
+    <call>
+        <endpoint key="SubjectsSoapEP"/>
+    </call>
+    <filter xpath="count(//*[local-name()='Tecnologia']) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="No Technologies from Themes Data Service"/>
+            </call-template>
+        </then>
+        <else>
+            <log>
+                <property name="msg" value="Retrieved technologies from Themes Data Service successfully"/>
+            </log>
+            <payloadFactory media-type="xml">
+                <format>
+                    <technologies xmlns="">$1</technologies>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="//*[local-name()='Tecnologia']"/>
+                </args>
+            </payloadFactory>
+            <log level="full"/>
+            <script language="js"><![CDATA[var log=mc.getServiceLog();
+var xmlPayload=mc.getPayloadXML()..*::Tecnologia;
+var response= new XML(<technologies></technologies>);
+for each (var item in xmlPayload) {
+	log.info(item);
+	var stringItem=item;
+	var array=stringItem.split(',');
+	for each(var name in array) {
+		log.info(name);
+		var x = name.trim().substring(1,name.trim().length-1);
+		var child = new XML(<technology>{x}</technology>);
+		response.appendChild(child);
+	}
+}
+mc.setPayloadXML(response);]]></script>
+            <log level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <log level="full"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$.technologies.technology[*]"/>
+                </args>
+            </payloadFactory>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

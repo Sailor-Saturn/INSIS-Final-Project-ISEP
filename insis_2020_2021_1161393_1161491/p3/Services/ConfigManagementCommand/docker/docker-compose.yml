@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  config-management-command:
+    container_name: config-management-command
+    build: ../.
+    ports:
+      - 3001:3001

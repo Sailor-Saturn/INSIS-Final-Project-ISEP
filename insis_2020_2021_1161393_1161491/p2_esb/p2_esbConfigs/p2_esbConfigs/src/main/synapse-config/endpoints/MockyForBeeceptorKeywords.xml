@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="MockyForBeeceptorKeywords" xmlns="http://ws.apache.org/ns/synapse">
+    <http method="get" uri-template="https://run.mocky.io/v3/11a17f55-6b9d-4121-98e9-13312e2ec26a">
+        <suspendOnFailure>
+            <initialDuration>-1</initialDuration>
+            <progressionFactor>1.0</progressionFactor>
+        </suspendOnFailure>
+        <markForSuspension>
+            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+        </markForSuspension>
+    </http>
+</endpoint>

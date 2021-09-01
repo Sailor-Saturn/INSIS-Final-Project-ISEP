@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_TAVVwLUZEeugY6lvVLUaug" type="Esb" name="ApproachesMockAPI" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_TAtJMLUZEeugY6lvVLUaug" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_TAtwQLUZEeugY6lvVLUaug" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_TECKALUZEeugY6lvVLUaug" type="3614">
+        <children xmi:type="notation:Node" xmi:id="_TEDYILUZEeugY6lvVLUaug" type="3615">
+          <children xmi:type="notation:DecorationNode" xmi:id="_TEDYJbUZEeugY6lvVLUaug" type="7035">
+            <children xmi:type="notation:Node" xmi:id="_TEKF0LUZEeugY6lvVLUaug" type="3495">
+              <children xmi:type="notation:DecorationNode" xmi:id="_TEKs4LUZEeugY6lvVLUaug" type="5168"/>
+              <children xmi:type="notation:Node" xmi:id="_TENwMLUZEeugY6lvVLUaug" type="3018">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TENwMbUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TENwMrUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TENwM7UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:LogMediatorInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.0/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TENwNLUZEeugY6lvVLUaug" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TENwNbUZEeugY6lvVLUaug" type="3019">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TENwNrUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TENwN7UZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TENwOLUZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:LogMediatorOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.0/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TENwObUZEeugY6lvVLUaug" x="64" y="-9"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_TEKF0bUZEeugY6lvVLUaug"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_TEKF0rUZEeugY6lvVLUaug" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_TEKF07UZEeugY6lvVLUaug"/>
+              <element xmi:type="esb:LogMediator" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.0"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEKF1LUZEeugY6lvVLUaug" x="25" y="89" width="84" height="115"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_TEYvULUZEeugY6lvVLUaug" type="3742">
+              <children xmi:type="notation:Node" xmi:id="_TEdAwLUZEeugY6lvVLUaug" type="3743">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TEdAwbUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TEdAwrUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TEdAw7UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:CallMediatorInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEdAxLUZEeugY6lvVLUaug" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TEdn0LUZEeugY6lvVLUaug" type="3744">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TEdn0bUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TEdn0rUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TEdn07UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:CallMediatorOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEdn1LUZEeugY6lvVLUaug" x="-11" y="-9"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TEdn1bUZEeugY6lvVLUaug" type="3745">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TEdn1rUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TEdn17UZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TEdn2LUZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:CallMediatorEndpointOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1/@endpointOutputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEdn2bUZEeugY6lvVLUaug"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TEdn2rUZEeugY6lvVLUaug" type="3746">
+                <children xmi:type="notation:DecorationNode" xmi:id="_TEdn37UZEeugY6lvVLUaug" type="7047">
+                  <children xmi:type="notation:Node" xmi:id="_TFF58LUZEeugY6lvVLUaug" type="3660">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_TFF59bUZEeugY6lvVLUaug" type="5165"/>
+                    <children xmi:type="notation:Node" xmi:id="_TFMnoLUZEeugY6lvVLUaug" type="3661">
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_TFMnobUZEeugY6lvVLUaug"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_TFMnorUZEeugY6lvVLUaug" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_TFMno7UZEeugY6lvVLUaug"/>
+                      <element xmi:type="esb:NamedEndpointInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1/@mediatorFlow/@children.0/@inputConnector"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFMnpLUZEeugY6lvVLUaug"/>
+                    </children>
+                    <styles xmi:type="notation:DescriptionStyle" xmi:id="_TFF58bUZEeugY6lvVLUaug"/>
+                    <styles xmi:type="notation:FontStyle" xmi:id="_TFF58rUZEeugY6lvVLUaug" fontName="Sans"/>
+                    <styles xmi:type="notation:LineStyle" xmi:id="_TFF587UZEeugY6lvVLUaug"/>
+                    <element xmi:type="esb:NamedEndpoint" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1/@mediatorFlow/@children.0"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFF59LUZEeugY6lvVLUaug" x="96" y="80"/>
+                  </children>
+                  <styles xmi:type="notation:TitleStyle" xmi:id="_TEdn4LUZEeugY6lvVLUaug" showTitle="true"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TEdn27UZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TEdn3LUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TEdn3bUZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:MediatorFlow" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1/@mediatorFlow"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEdn3rUZEeugY6lvVLUaug"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_TEYvUbUZEeugY6lvVLUaug"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_TEYvUrUZEeugY6lvVLUaug" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_TEYvU7UZEeugY6lvVLUaug"/>
+              <element xmi:type="esb:CallMediator" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEYvVLUZEeugY6lvVLUaug" x="149" y="89" width="170" height="100"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_TFWYoLUZEeugY6lvVLUaug" type="3780">
+              <children xmi:type="notation:DecorationNode" xmi:id="_TFW_sLUZEeugY6lvVLUaug" type="5213"/>
+              <children xmi:type="notation:Node" xmi:id="_TFeUcLUZEeugY6lvVLUaug" type="3781">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TFeUcbUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TFeUcrUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TFeUc7UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:ForEachMediatorInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFeUdLUZEeugY6lvVLUaug" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TFe7gLUZEeugY6lvVLUaug" type="3782">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TFe7gbUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TFe7grUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TFe7g7UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:ForEachMediatorOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFe7hLUZEeugY6lvVLUaug" x="-11" y="-9"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TFe7hbUZEeugY6lvVLUaug" type="3783">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TFe7hrUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TFe7h7UZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TFe7iLUZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:ForEachMediatorTargetOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@targetOutputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFe7ibUZEeugY6lvVLUaug" x="80" y="-9"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TFfikLUZEeugY6lvVLUaug" type="3784">
+                <children xmi:type="notation:DecorationNode" xmi:id="_TFfilbUZEeugY6lvVLUaug" type="7057">
+                  <children xmi:type="notation:Node" xmi:id="_TFydgLUZEeugY6lvVLUaug" type="3597">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_TFydhbUZEeugY6lvVLUaug" type="5191"/>
+                    <children xmi:type="notation:Node" xmi:id="_TF5yQLUZEeugY6lvVLUaug" type="3598">
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_TF5yQbUZEeugY6lvVLUaug"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_TF5yQrUZEeugY6lvVLUaug" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_TF5yQ7UZEeugY6lvVLUaug"/>
+                      <element xmi:type="esb:PayloadFactoryMediatorInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@mediatorFlow/@children.0/@inputConnector"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TF5yRLUZEeugY6lvVLUaug" x="-6" y="-5"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_TF6ZULUZEeugY6lvVLUaug" type="3599">
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_TF6ZUbUZEeugY6lvVLUaug"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_TF6ZUrUZEeugY6lvVLUaug" fontName="Sans"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_TF6ZU7UZEeugY6lvVLUaug"/>
+                      <element xmi:type="esb:PayloadFactoryMediatorOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@mediatorFlow/@children.0/@outputConnector"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TF6ZVLUZEeugY6lvVLUaug" x="64" y="-9"/>
+                    </children>
+                    <styles xmi:type="notation:DescriptionStyle" xmi:id="_TFydgbUZEeugY6lvVLUaug"/>
+                    <styles xmi:type="notation:FontStyle" xmi:id="_TFydgrUZEeugY6lvVLUaug" fontName="Sans"/>
+                    <styles xmi:type="notation:LineStyle" xmi:id="_TFydg7UZEeugY6lvVLUaug"/>
+                    <element xmi:type="esb:PayloadFactoryMediator" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@mediatorFlow/@children.0"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFydhLUZEeugY6lvVLUaug" x="25" y="10" width="84" height="115"/>
+                  </children>
+                  <styles xmi:type="notation:TitleStyle" xmi:id="_TFfilrUZEeugY6lvVLUaug" showTitle="true"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TFfikbUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TFfikrUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TFfik7UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:MediatorFlow" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@mediatorFlow"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFfilLUZEeugY6lvVLUaug"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_TFWYobUZEeugY6lvVLUaug"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_TFWYorUZEeugY6lvVLUaug" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_TFWYo7UZEeugY6lvVLUaug"/>
+              <element xmi:type="esb:ForEachMediator" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFWYpLUZEeugY6lvVLUaug" x="359" y="89" width="170" height="100"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_TGQXkLUZEeugY6lvVLUaug" type="3495">
+              <children xmi:type="notation:DecorationNode" xmi:id="_TGQXlbUZEeugY6lvVLUaug" type="5168"/>
+              <children xmi:type="notation:Node" xmi:id="_TGSz0LUZEeugY6lvVLUaug" type="3018">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGSz0bUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TGSz0rUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TGSz07UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:LogMediatorInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.3/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGSz1LUZEeugY6lvVLUaug" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TGTa4LUZEeugY6lvVLUaug" type="3019">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGTa4bUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TGTa4rUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TGTa47UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:LogMediatorOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.3/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGTa5LUZEeugY6lvVLUaug" x="64" y="-9"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGQXkbUZEeugY6lvVLUaug"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_TGQXkrUZEeugY6lvVLUaug" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_TGQXk7UZEeugY6lvVLUaug"/>
+              <element xmi:type="esb:LogMediator" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.3"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGQXlLUZEeugY6lvVLUaug" x="598" y="89" width="84" height="115"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_TGbWsLUZEeugY6lvVLUaug" type="3492">
+              <children xmi:type="notation:DecorationNode" xmi:id="_TGb9wLUZEeugY6lvVLUaug" type="5167"/>
+              <children xmi:type="notation:Node" xmi:id="_TGdy8LUZEeugY6lvVLUaug" type="3033">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGdy8bUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TGdy8rUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TGdy87UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:PropertyMediatorInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.4/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGdy9LUZEeugY6lvVLUaug" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TGeaALUZEeugY6lvVLUaug" type="3034">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGeaAbUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TGeaArUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TGeaA7UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:PropertyMediatorOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.4/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGeaBLUZEeugY6lvVLUaug" x="64" y="-9"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGbWsbUZEeugY6lvVLUaug"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_TGbWsrUZEeugY6lvVLUaug" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_TGbWs7UZEeugY6lvVLUaug"/>
+              <element xmi:type="esb:PropertyMediator" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.4"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGbWtLUZEeugY6lvVLUaug" x="722" y="89" width="84" height="115"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_TGqnQLUZEeugY6lvVLUaug" type="3597">
+              <children xmi:type="notation:DecorationNode" xmi:id="_TGqnRbUZEeugY6lvVLUaug" type="5191"/>
+              <children xmi:type="notation:Node" xmi:id="_TGtDgLUZEeugY6lvVLUaug" type="3598">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGtDgbUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TGtDgrUZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TGtDg7UZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:PayloadFactoryMediatorInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.5/@inputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGtDhLUZEeugY6lvVLUaug" x="-6" y="-5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_TGtDhbUZEeugY6lvVLUaug" type="3599">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGtDhrUZEeugY6lvVLUaug"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_TGtDh7UZEeugY6lvVLUaug" fontName="Sans"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_TGtDiLUZEeugY6lvVLUaug"/>
+                <element xmi:type="esb:PayloadFactoryMediatorOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.5/@outputConnector"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGtDibUZEeugY6lvVLUaug" x="64" y="-9"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_TGqnQbUZEeugY6lvVLUaug"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_TGqnQrUZEeugY6lvVLUaug" fontName="Sans"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_TGqnQ7UZEeugY6lvVLUaug"/>
+              <element xmi:type="esb:PayloadFactoryMediator" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.5"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TGqnRLUZEeugY6lvVLUaug" x="846" y="89" width="84" height="115"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_TEDYJrUZEeugY6lvVLUaug" showTitle="true"/>
+          </children>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_TEDYIbUZEeugY6lvVLUaug"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_TEDYIrUZEeugY6lvVLUaug" fontName="Sans"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_TEDYI7UZEeugY6lvVLUaug"/>
+          <element xmi:type="esb:MediatorFlow" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEDYJLUZEeugY6lvVLUaug"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_TEDYJ7UZEeugY6lvVLUaug" type="3616">
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_TEDYKLUZEeugY6lvVLUaug"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_TEDYKbUZEeugY6lvVLUaug" fontName="Sans"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_TEDYKrUZEeugY6lvVLUaug"/>
+          <element xmi:type="esb:SequencesInputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@inputConnector"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEDYK7UZEeugY6lvVLUaug" x="-11" y="-9"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_TED_MLUZEeugY6lvVLUaug" type="3617">
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_TED_MbUZEeugY6lvVLUaug"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_TED_MrUZEeugY6lvVLUaug" fontName="Sans"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_TED_M7UZEeugY6lvVLUaug"/>
+          <element xmi:type="esb:SequencesOutputConnector" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@outputConnector"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TED_NLUZEeugY6lvVLUaug" x="-11" y="-9"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_TECKAbUZEeugY6lvVLUaug"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_TECKArUZEeugY6lvVLUaug" fontName="Sans"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_TECKA7UZEeugY6lvVLUaug"/>
+        <element xmi:type="esb:Sequences" href="resources/ApproachesMockAPI.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TECKBLUZEeugY6lvVLUaug" width="195" height="125"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_TAtJMbUZEeugY6lvVLUaug"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_TAtJMrUZEeugY6lvVLUaug" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_TAtJM7UZEeugY6lvVLUaug"/>
+    <element xmi:type="esb:EsbServer" href="resources/ApproachesMockAPI.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TAtJNLUZEeugY6lvVLUaug"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_TAVVwbUZEeugY6lvVLUaug"/>
+  <element xmi:type="esb:EsbDiagram" href="resources/ApproachesMockAPI.esb#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_TG8UELUZEeugY6lvVLUaug" type="4001" source="_TFe7hbUZEeugY6lvVLUaug" target="_TF5yQLUZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_TG8UEbUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@targetOutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TG8UErUZEeugY6lvVLUaug" points="[11, 7, -5, -4]$[10, 6, -6, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_TG_-cLUZEeugY6lvVLUaug" type="4001" source="_TED_MLUZEeugY6lvVLUaug" target="_TENwMLUZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_TG_-cbUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TG_-crUZEeugY6lvVLUaug" points="[6, 9, 0, -1]$[0, 5, -6, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_THDBwLUZEeugY6lvVLUaug" type="4001" source="_TENwNbUZEeugY6lvVLUaug" target="_TEdAwLUZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_THDBwbUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_THDBwrUZEeugY6lvVLUaug" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_THFeALUZEeugY6lvVLUaug" type="4001" source="_TEdn0LUZEeugY6lvVLUaug" target="_TFeUcLUZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_THFeAbUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_THFeArUZEeugY6lvVLUaug" points="[-11, 0, -6, 0]$[1, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_THH6QLUZEeugY6lvVLUaug" type="4001" source="_TFe7gLUZEeugY6lvVLUaug" target="_TGSz0LUZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_THH6QbUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_THH6QrUZEeugY6lvVLUaug" points="[-11, 0, -6, 0]$[1, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_THLkoLUZEeugY6lvVLUaug" type="4001" source="_TGTa4LUZEeugY6lvVLUaug" target="_TGdy8LUZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_THLkobUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.3/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_THLkorUZEeugY6lvVLUaug" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_THOn8LUZEeugY6lvVLUaug" type="4001" source="_TGeaALUZEeugY6lvVLUaug" target="_TGtDgLUZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_THOn8bUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.4/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_THOn8rUZEeugY6lvVLUaug" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_THREMLUZEeugY6lvVLUaug" type="4001" source="_TGtDhbUZEeugY6lvVLUaug" target="_TEDYJ7UZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_THREMbUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.5/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_THRrQLUZEeugY6lvVLUaug" points="[-11, -2, 65, 8]$[-65, -9, 11, 1]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_THcDULUZEeugY6lvVLUaug" type="4001" source="_TEdn1bUZEeugY6lvVLUaug" target="_TFMnoLUZEeugY6lvVLUaug" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_THcDUbUZEeugY6lvVLUaug" fontName="Sans"/>
+    <element xmi:type="esb:EsbLink" href="resources/ApproachesMockAPI.esb#//@server/@children.0/@mediatorFlow/@children.1/@endpointOutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_THcDUrUZEeugY6lvVLUaug" points="[11, 8, -113, -88]$[117, 91, -7, -5]"/>
+  </edges>
+</notation:Diagram>

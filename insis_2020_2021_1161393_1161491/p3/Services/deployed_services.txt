@@ -1,0 +1,14 @@
+RabbitMQ:
+  http://34.122.145.120:31547/
+
+ConfigManagementQuery:
+  http://34.122.145.120:31243/
+
+ConfigManagementCommand:
+  http://34.122.145.120:31753/
+
+UserCommand:
+  http://34.122.145.120:31915/
+
+UserQuery:
+  http://34.122.145.120:31598/

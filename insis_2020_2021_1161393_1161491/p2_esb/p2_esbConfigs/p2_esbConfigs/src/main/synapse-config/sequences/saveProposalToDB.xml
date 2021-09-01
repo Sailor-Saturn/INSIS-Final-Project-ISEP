@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="saveProposalToDB" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory media-type="json">
+        <format>{ "_post_proposal": {  "title": "$1",  "problem": "$2",  "goals": "$3",  "technologies": "$4",  "keywords": "$5",  "approaches": "$6",  "state": "accepted", "proponent": "$7" }}</format>
+        <args>
+            <arg evaluator="xml" expression="get-property('proposalTitle')"/>
+            <arg evaluator="xml" expression="get-property('proposalProblem')"/>
+            <arg evaluator="xml" expression="get-property('proposalGoals')"/>
+            <arg evaluator="xml" expression="get-property('proposalTechnologies')"/>
+            <arg evaluator="xml" expression="get-property('proposalKeywords')"/>
+            <arg evaluator="xml" expression="get-property('proposalApproaches')"/>
+            <arg evaluator="xml" expression="get-property('proposalProponent')"/>
+        </args>
+    </payloadFactory>
+    <log level="full"/>
+    <call>
+        <endpoint key="AddProposal"/>
+    </call>
+</sequence>

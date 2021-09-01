@@ -1,0 +1,463 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "OpenAPI definition",
+		"version": "v0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8083",
+			"description": "Generated server url"
+		}
+	],
+	"paths": {
+		"/api/defense": {
+			"post": {
+				"tags": [
+					"defense-controller-impl"
+				],
+				"summary": "Create a defense with no jury.",
+				"operationId": "createDefense",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateDefenseDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"500": {
+						"description": "Internal server error."
+					},
+					"200": {
+						"description": "Defense created.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Defense"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/defense/jury/{juryId}": {
+			"patch": {
+				"tags": [
+					"defense-controller-impl"
+				],
+				"summary": "Set jury to the defense",
+				"operationId": "setJury",
+				"parameters": [
+					{
+						"name": "juryId",
+						"in": "path",
+						"description": "id of the jury",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"404": {
+						"description": "Invalid id supplied"
+					},
+					"500": {
+						"description": "Internal server error"
+					},
+					"200": {
+						"description": "Jury has been set.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Defense"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/defense/defenseStatus/{id}": {
+			"patch": {
+				"tags": [
+					"defense-controller-impl"
+				],
+				"summary": "Set defense status",
+				"operationId": "setDefenseStatus",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id of defense  to be searched",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "string",
+								"description": "defense status to be set"
+							}
+						}
+					}
+				},
+				"responses": {
+					"404": {
+						"description": "Invalid id supplied"
+					},
+					"500": {
+						"description": "Internal server error"
+					},
+					"200": {
+						"description": "Defense status changed.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Defense"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v3/api-docs": {
+			"get": {
+				"tags": [
+					"open-api-controller-web-mvc"
+				],
+				"operationId": "getDocumentation",
+				"parameters": [
+					{
+						"name": "group",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "string"
+								}
+							},
+							"application/hal+json": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v2/api-docs": {
+			"get": {
+				"tags": [
+					"swagger-2-controller-web-mvc"
+				],
+				"operationId": "getDocumentation_1",
+				"parameters": [
+					{
+						"name": "group",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "string"
+								}
+							},
+							"application/hal+json": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/swagger-resources/configuration/ui": {
+			"get": {
+				"tags": [
+					"api-resource-controller"
+				],
+				"operationId": "uiConfiguration",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UiConfiguration"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/swagger-resources/configuration/security": {
+			"get": {
+				"tags": [
+					"api-resource-controller"
+				],
+				"operationId": "securityConfiguration",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SecurityConfiguration"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/swagger-resources": {
+			"get": {
+				"tags": [
+					"api-resource-controller"
+				],
+				"operationId": "swaggerResources",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/SwaggerResource"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"CreateDefenseDTO": {
+				"required": [
+					"defenseStatus",
+					"title",
+					"userId"
+				],
+				"type": "object",
+				"properties": {
+					"userId": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "User Id"
+					},
+					"title": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Title"
+					},
+					"defenseStatus": {
+						"maxLength": 20,
+						"type": "string",
+						"description": "Defense Status"
+					}
+				}
+			},
+			"Defense": {
+				"type": "object",
+				"properties": {
+					"defenseId": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"defenseStatus": {
+						"type": "string",
+						"enum": [
+							"REPORT_SUBMITTED",
+							"JURY_INVITED",
+							"JURY_REJECTED",
+							"JURY_CHOSEN",
+							"DATE_PLACE_CHOSEN",
+							"GRADED",
+							"ERROR"
+						]
+					},
+					"juryId": {
+						"type": "string"
+					}
+				}
+			},
+			"UiConfiguration": {
+				"type": "object",
+				"properties": {
+					"deepLinking": {
+						"type": "boolean"
+					},
+					"displayOperationId": {
+						"type": "boolean"
+					},
+					"defaultModelsExpandDepth": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"defaultModelExpandDepth": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"defaultModelRendering": {
+						"type": "string",
+						"enum": [
+							"example",
+							"model"
+						]
+					},
+					"displayRequestDuration": {
+						"type": "boolean"
+					},
+					"docExpansion": {
+						"type": "string",
+						"enum": [
+							"none",
+							"list",
+							"full"
+						]
+					},
+					"filter": {
+						"type": "object"
+					},
+					"maxDisplayedTags": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"operationsSorter": {
+						"type": "string",
+						"enum": [
+							"alpha",
+							"method"
+						]
+					},
+					"showExtensions": {
+						"type": "boolean"
+					},
+					"showCommonExtensions": {
+						"type": "boolean"
+					},
+					"tagsSorter": {
+						"type": "string",
+						"enum": [
+							"alpha"
+						]
+					},
+					"validatorUrl": {
+						"type": "string"
+					},
+					"supportedSubmitMethods": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"swaggerBaseUiUrl": {
+						"type": "string"
+					}
+				}
+			},
+			"SecurityConfiguration": {
+				"type": "object",
+				"properties": {
+					"apiKey": {
+						"type": "string",
+						"deprecated": true
+					},
+					"apiKeyVehicle": {
+						"type": "string",
+						"deprecated": true
+					},
+					"apiKeyName": {
+						"type": "string",
+						"deprecated": true
+					},
+					"clientId": {
+						"type": "string"
+					},
+					"clientSecret": {
+						"type": "string"
+					},
+					"realm": {
+						"type": "string"
+					},
+					"appName": {
+						"type": "string"
+					},
+					"scopeSeparator": {
+						"type": "string"
+					},
+					"additionalQueryStringParams": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "object"
+						}
+					},
+					"useBasicAuthenticationWithAccessCodeGrant": {
+						"type": "boolean"
+					},
+					"enableCsrfSupport": {
+						"type": "boolean"
+					}
+				}
+			},
+			"SwaggerResource": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"url": {
+						"type": "string"
+					},
+					"swaggerVersion": {
+						"type": "string"
+					},
+					"location": {
+						"type": "string",
+						"deprecated": true
+					}
+				}
+			}
+		}
+	}
+}

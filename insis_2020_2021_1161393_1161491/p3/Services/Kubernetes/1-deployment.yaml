@@ -1,0 +1,208 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-deployment
+  namespace: insis
+spec:
+  selector:
+    matchLabels:
+      app: mongo-cmq
+  template:
+    metadata:
+      labels:
+        app: mongo-cmq
+    spec:
+      containers:
+        - name: mongo-cmq
+          image: mongo
+          volumeMounts:
+            - mountPath: /data/db
+              name: mongo-cmq
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 27017
+      volumes:
+        - name: mongo-cmq
+          emptyDir: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbit-deployment
+  namespace: insis
+spec:
+  selector:
+    matchLabels:
+      app: rabbit
+  template:
+    metadata:
+      labels:
+        app: rabbit
+    spec:
+      containers:
+        - name: rabbitmq
+          image: rabbitmq:3.8.17-management-alpine
+          volumeMounts:
+            - mountPath: /var/lib/rabbimq
+              name: rabbit-store
+            - mountPath: /var/log/rabbitmq
+              name: rabbit-logs
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 5672
+            - containerPort: 15672
+      volumes:
+        - name: rabbit-store
+          emptyDir: {}
+        - name: rabbit-logs
+          emptyDir: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cmq-deployment
+  namespace: insis
+spec:
+  selector:
+    matchLabels:
+      app: cmq
+  template:
+    metadata:
+      labels:
+        app: cmq
+    spec:
+      containers:
+        - name: cmq
+          image: sf97/configmanagementquery:latest
+          env:
+            - name: app_mongoURI
+              valueFrom:
+                configMapKeyRef:
+                  key: app_mongouri_cmq
+                  name: insis-configmap
+            - name: app_amqpConfig__hostname
+              valueFrom:
+                configMapKeyRef:
+                  key: app_amqpconfig_hostname
+                  name: insis-configmap
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 3000
+            - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cmc-deployment
+  namespace: insis
+spec:
+  selector:
+    matchLabels:
+      app: cmc
+  template:
+    metadata:
+      labels:
+        app: cmc
+    spec:
+      containers:
+        - name: cmc
+          image: sf97/configmanagementcommand
+          env:
+            - name: app_configManagementQueryURL
+              valueFrom:
+                configMapKeyRef:
+                  key: app_configmanagementquery_url
+                  name: insis-configmap
+            - name: app_amqpConfig__hostname
+              valueFrom:
+                configMapKeyRef:
+                  key: app_amqpconfig_hostname
+                  name: insis-configmap
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 3001
+            - containerPort: 3001
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uc-deployment
+  namespace: insis
+spec:
+  selector:
+    matchLabels:
+      app: uc
+  template:
+    metadata:
+      labels:
+        app: uc
+    spec:
+      containers:
+        - name: uc
+          image: sf97/userscommand
+          env:
+            - name: app_userQueryURL
+              valueFrom:
+                configMapKeyRef:
+                  key: users_query_hostname
+                  name: insis-configmap
+            - name: app_amqpConfig__hostname
+              valueFrom:
+                configMapKeyRef:
+                  key: app_amqpconfig_hostname
+                  name: insis-configmap
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 3003
+            - containerPort: 3003
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uq-deployment
+  namespace: insis
+spec:
+  selector:
+    matchLabels:
+      app: uq
+  template:
+    metadata:
+      labels:
+        app: uq
+    spec:
+      containers:
+        - name: uq
+          image: sf97/usersquery
+          env:
+            - name: app_mongoURI
+              valueFrom:
+                configMapKeyRef:
+                  key: app_mongouri_cmq
+                  name: insis-configmap
+            - name: app_amqpConfig__hostname
+              valueFrom:
+                configMapKeyRef:
+                  key: app_amqpconfig_hostname
+                  name: insis-configmap
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 3002
+            - containerPort: 3002

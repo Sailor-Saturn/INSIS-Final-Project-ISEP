@@ -1,0 +1,124 @@
+version: "3.9"
+services:
+    mongo:
+        container_name: mongo-config-management-query
+        image: mongo
+        ports:
+          - 27017:27017
+        volumes:
+          - ./data:/data/db
+    config-management-query:
+        container_name: config-management-query
+        build: ConfigManagementQuery/.
+        depends_on:
+            - rabbitmq
+        environment:
+            app_mongoURI: mongodb://mongo-config-management-query:27017/db
+            app_amqpConfig__hostname: rabbitmq
+        ports:
+            - 3000:3000
+    config-management-command:
+        container_name: config-management-command
+        build: ConfigManagementCommand/.
+        depends_on:
+            - "rabbitmq"
+        environment:
+            app_configManagementQueryURL: http://config-management-query:3000
+            app_amqpConfig__hostname: rabbitmq
+        ports:
+            - 3001:3001
+    mongo-users-query:
+        container_name: mongo-users-query
+        image: mongo
+        ports:
+            - 27018:27017
+        volumes:
+            - ./data/mongo-users:/data/db
+    users-query:
+        container_name: users-query
+        build: UsersQuery/.
+        depends_on:
+            - "rabbitmq"
+        environment:
+            app_mongoURI: mongodb://mongo-users-query:27017/db
+            app_amqpConfig__hostname: rabbitmq
+        ports:
+            - 3002:3002
+    users-command:
+        container_name: users-command
+        build: UsersCommand/.
+        depends_on:
+            - "rabbitmq"
+        environment:
+            app_amqpConfig__hostname: rabbitmq
+            app_userQueryURL: http://users-query:3002
+        ports:
+            - 3003:3003
+    postgres-room:
+            image: postgres:9.6-alpine
+            container_name: "postgres-room"
+            environment:
+                - POSTGRES_USER=postgres
+                - POSTGRES_PASSWORD=root
+                - POSTGRES_DB=postgres
+            ports:
+                - 5432:5432
+            volumes:
+                - .data/db-room-data:/var/lib/postgresql/data
+    postgres-proposal:
+            image: postgres:9.6-alpine
+            container_name: "postgres-proposal"
+            environment:
+                - POSTGRES_USER=postgres
+                - POSTGRES_PASSWORD=root
+                - POSTGRES_DB=postgres
+            ports:
+                - 5433:5432
+            volumes:
+                - .data/db-proposal-data:/var/lib/postgresql/data
+    postgres-defense:
+            image: postgres:9.6-alpine
+            container_name: "postgres-defense"
+            environment:
+                - POSTGRES_USER=postgres
+                - POSTGRES_PASSWORD=root
+                - POSTGRES_DB=postgres
+            ports:
+                - 5434:5432
+            volumes:
+                - .data/db-proposal-data:/var/lib/postgresql/data
+    rabbitmq:
+        image: rabbitmq:3.8.17-management-alpine
+        healthcheck:
+            test: rabbitmq-diagnostics -q ping
+            interval: 30s
+            timeout: 30s
+            retries: 3
+        container_name: 'rabbitmq'
+        ports:
+            - 5672:5672
+            - 15672:15672
+        volumes:
+            - .data/rabbitmq/data/:/var/lib/rabbitmq/
+            - .data/rabbitmq/log/:/var/log/rabbitmq
+    discovery-server:
+        image: discovery-server:0.0.1
+        container_name: "discovery-server-insis"
+        ports:
+            - 8761:8761
+    proposal-cmd:
+        image: proposal.cmd-0.0.1
+        container_name: "proposal.cmd"
+        ports:
+            - 8081:8081
+        environment:
+            RABBIT_HOST: rabbitmq
+    proposal-query:
+        image: proposal.query-0.0.1
+        container_name: "proposal-query"
+        ports:
+            - 8082:8082
+        environment:
+            RABBIT_HOST: rabbitmq
+        depends_on:
+            - postgres-proposal             

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GetKeywordsThemesServiceSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="request log">
+        <property name="msg" value="Retrieving keywords Themes Service Sequence"/>
+    </log>
+    <property name="REST_URL_POSTFIX" scope="default" type="STRING" value=""/>
+    <payloadFactory description="body" media-type="xml">
+        <format>
+            <dat:GetThemes xmlns:dat="http://ws.wso2.org/dataservice"/>
+        </format>
+        <args/>
+    </payloadFactory>
+    <call>
+        <endpoint key="SubjectsSoapEP"/>
+    </call>
+    <log description="response" level="full">
+        <property name="msg" value="Full response from Themes Service"/>
+    </log>
+    <filter xpath="count(//*[local-name()='PalavrasChave']) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="No Keywords from Themes Data service"/>
+            </call-template>
+        </then>
+        <else>
+            <log>
+                <property name="msg" value="Retrieved keywords from Themes Data Service successfully"/>
+            </log>
+            <payloadFactory media-type="xml">
+                <format>
+                    <keywords xmlns="http://ws.wso2.org/dataservice">$1</keywords>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="//*[local-name()='PalavrasChave']"/>
+                </args>
+            </payloadFactory>
+            <log level="full"/>
+            <script language="js"><![CDATA[var log=mc.getServiceLog();
+var xmlPayload=mc.getPayloadXML()..*::PalavrasChave;
+var response= new XML(<keywords></keywords>);
+for each (var item in xmlPayload) {
+	log.info(item);
+	var stringItem=item;
+	var array=stringItem.split(',');
+	for each(var name in array) {
+		log.info(name);
+		var x = name.trim().substring(1,name.trim().length-1);
+		var child = new XML(<keyword>{x}</keyword>);
+		response.appendChild(child);
+	}
+}
+mc.setPayloadXML(response);]]></script>
+            <log level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$.keywords.keyword[*]"/>
+                </args>
+            </payloadFactory>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

@@ -1,0 +1,34 @@
+{
+  "message": "startEvent",
+  "tenantId": "-1234",
+  "variables": [
+      {
+          "name": "problem",
+          "value": "problem_csv"
+      },
+      {
+          "name": "goals",
+          "value": "goals_csv"
+      },
+      {
+          "name": "title",
+          "value": "title_csv"
+      },
+      {
+          "name": "keywords",
+          "value": ["keyword1","keyword2","keyword2"]
+      },
+      {
+          "name": "approaches",
+          "value": ["approach1","approach2","approach3"]
+      },
+      {
+          "name": "technologies",
+          "value": ["technology1","technology2","technology3"]
+      },
+      {
+          "name": "proponentUsername",
+          "value": "proponent1"
+      }
+  ]
+}

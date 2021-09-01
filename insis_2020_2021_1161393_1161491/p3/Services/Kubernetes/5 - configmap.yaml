@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: insis-configmap
+  namespace: insis
+data:
+  app_mongouri_cmq: mongodb://mongo-cmq:27017/db
+  app_amqpconfig_hostname: rabbit-svc
+  app_configmanagementquery_url: http://cmq:3000
+  users_query_hostname: http://uq-svc:3002

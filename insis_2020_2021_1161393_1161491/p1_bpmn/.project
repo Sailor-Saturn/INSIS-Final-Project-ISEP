@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>insis_2020_2021_1161393_1161491</name>
+	<comment></comment>
+	<projects>
+		<project>config_project</project>
+		<project>p1_bpmn_support</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.activiti.designer.nature</nature>
+	</natures>
+</projectDescription>

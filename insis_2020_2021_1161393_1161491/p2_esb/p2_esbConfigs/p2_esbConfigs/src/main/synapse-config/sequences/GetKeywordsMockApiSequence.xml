@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GetKeywordsMockApiSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="request log">
+        <property name="msg" value="Retrieving keywords MockApi Sequence"/>
+    </log>
+    <call>
+        <endpoint key="TempReplacementMockApiEP"/>
+    </call>
+    <filter xpath="count(//palavras_chave) = 0">
+        <then>
+            <call-template target="EndpointNotWorkingTemplate">
+                <with-param name="message" value="No keywords from MockAPI"/>
+            </call-template>
+        </then>
+        <else>
+            <log description="MockAPI working">
+                <property name="msg" value="Retrieved keywords from MockAPI successfully"/>
+            </log>
+            <foreach expression="//jsonArray/jsonElement/palavras_chave/text()" id="retrieveKeywords">
+                <sequence>
+                    <payloadFactory description="extract keywords" media-type="xml">
+                        <format>
+                            <keyword xmlns="">$1</keyword>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="//text()"/>
+                        </args>
+                    </payloadFactory>
+                </sequence>
+            </foreach>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$[:1].palavras_chave[:1].keyword[*]"/>
+                </args>
+            </payloadFactory>
+            <log level="full"/>
+        </else>
+    </filter>
+    <loopback/>
+</sequence>

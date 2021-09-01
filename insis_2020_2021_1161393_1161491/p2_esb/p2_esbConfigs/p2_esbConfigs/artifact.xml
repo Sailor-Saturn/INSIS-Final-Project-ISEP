@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="test" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/test.xml</file>
+    </artifact>
+    <artifact name="keywordsAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/keywordsAPI.xml</file>
+    </artifact>
+    <artifact name="proposalsFileProxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/proposalsFileProxy.xml</file>
+    </artifact>
+    <artifact name="addProposalToDatabaseSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/addProposalToDatabaseSequence.xml</file>
+    </artifact>
+    <artifact name="smooks-config" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-config.xml</file>
+    </artifact>
+    <artifact name="smooks" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks.xml</file>
+    </artifact>
+    <artifact name="smooks_conf_xml" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks_conf_xml.xml</file>
+    </artifact>
+    <artifact name="smooks_csv" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks_csv.xml</file>
+    </artifact>
+    <artifact name="Sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Sequence.xml</file>
+    </artifact>
+    <artifact name="saveProposalToDB" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/saveProposalToDB.xml</file>
+    </artifact>
+    <artifact name="fireAcceptProposalTask" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/fireAcceptProposalTask.xml</file>
+    </artifact>
+    <artifact name="fireAcceptProposal" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/fireAcceptProposal.xml</file>
+    </artifact>
+    <artifact name="addProposal" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/addProposal.xml</file>
+    </artifact>
+    <artifact name="addProposals" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/addProposals.xml</file>
+    </artifact>
+    <artifact name="BeeceptorEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/BeeceptorEP.xml</file>
+    </artifact>
+    <artifact name="ProjectMockapiEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/ProjectMockapiEP.xml</file>
+    </artifact>
+    <artifact name="AddProposal" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/AddProposal.xml</file>
+    </artifact>
+    <artifact name="SubjectsMockyEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/SubjectsMockyEP.xml</file>
+    </artifact>
+    <artifact name="KeywordsMockySoapEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/KeywordsMockySoapEP.xml</file>
+    </artifact>
+    <artifact name="TechnologiesSoapEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/TechnologiesSoapEP.xml</file>
+    </artifact>
+    <artifact name="SubjectsSoapEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/SubjectsSoapEP.xml</file>
+    </artifact>
+    <artifact name="ApproachesAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ApproachesAPI.xml</file>
+    </artifact>
+    <artifact name="ApproachesBeeceptor" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ApproachesBeeceptor.xml</file>
+    </artifact>
+    <artifact name="ApproachesMockAPI" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ApproachesMockAPI.xml</file>
+    </artifact>
+    <artifact name="KeywordsWSDL" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/KeywordsWSDL.xml</file>
+    </artifact>
+    <artifact name="TechnologiesAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/TechnologiesAPI.xml</file>
+    </artifact>
+    <artifact name="test123" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/test123.xml</file>
+    </artifact>
+    <artifact name="datasourceAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/datasourceAPI.xml</file>
+    </artifact>
+    <artifact name="GetTechnologiesFromMockAPIService" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetTechnologiesFromMockAPIService.xml</file>
+    </artifact>
+    <artifact name="RetrieveProposals" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/RetrieveProposals.xml</file>
+    </artifact>
+    <artifact name="RetrieveProposalsByState" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/RetrieveProposalsByState.xml</file>
+    </artifact>
+    <artifact name="ProposalsAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ProposalsAPI.xml</file>
+    </artifact>
+    <artifact name="UpdateState" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/UpdateState.xml</file>
+    </artifact>
+    <artifact name="UsersAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/UsersAPI.xml</file>
+    </artifact>
+    <artifact name="StudentsEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/StudentsEP.xml</file>
+    </artifact>
+    <artifact name="TeachersEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/TeachersEP.xml</file>
+    </artifact>
+    <artifact name="GetKeywordsSOAPSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetKeywordsSOAPSequence.xml</file>
+    </artifact>
+    <artifact name="GetKeywordsMockApiSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetKeywordsMockApiSequence.xml</file>
+    </artifact>
+    <artifact name="GetKeywordsBeeceptorSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetKeywordsBeeceptorSequence.xml</file>
+    </artifact>
+    <artifact name="GetTechnologiesSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/gettechnologiessequence.xml</file>
+    </artifact>
+    <artifact name="GetTechTechnologiesServiceSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetTechTechnologiesServiceSequence.xml</file>
+    </artifact>
+    <artifact name="GetTechnologiesThemeServiceSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetTechnologiesThemeServiceSequence.xml</file>
+    </artifact>
+    <artifact name="GetKeywordsThemesServiceSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetKeywordsThemesServiceSequence.xml</file>
+    </artifact>
+    <artifact name="MockyForBeeceptorKeywords" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/MockyForBeeceptorKeywords.xml</file>
+    </artifact>
+    <artifact name="DatasourcesAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/DatasourcesAPI.xml</file>
+    </artifact>
+    <artifact name="TempReplacementMockApiEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/TempReplacementMockApiEP.xml</file>
+    </artifact>
+    <artifact name="MoodleBeeceptor" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/MoodleBeeceptor.xml</file>
+    </artifact>
+    <artifact name="EndpointNotWorkingTemplate" groupId="com.example.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/EndpointNotWorkingTemplate.xml</file>
+    </artifact>
+    <artifact name="ProponentEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/ProponentEP.xml</file>
+    </artifact>
+</artifacts>
